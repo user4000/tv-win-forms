@@ -33,20 +33,20 @@
       this.MenuItemFirstItem = new Telerik.WinControls.UI.RadMenuItem();
       this.PnMainTop = new Telerik.WinControls.UI.RadPanel();
       this.SplitterMainHorizontal = new System.Windows.Forms.Splitter();
-      this.PnMainSide = new Telerik.WinControls.UI.RadPanel();
       this.SplitterMainVertical = new System.Windows.Forms.Splitter();
       this.PvMain = new Telerik.WinControls.UI.RadPageView();
-      this.PageFirst = new Telerik.WinControls.UI.RadPageViewPage();
+      this.PageEmpty = new Telerik.WinControls.UI.RadPageViewPage();
       this.PageLog = new Telerik.WinControls.UI.RadPageViewPage();
       this.PageSettings = new Telerik.WinControls.UI.RadPageViewPage();
       this.PageAboutProgram = new Telerik.WinControls.UI.RadPageViewPage();
       this.PageExit = new Telerik.WinControls.UI.RadPageViewPage();
       this.NotifyIconMainForm = new System.Windows.Forms.NotifyIcon(this.components);
+      this.TvMain = new Telerik.WinControls.UI.RadTreeView();
       ((System.ComponentModel.ISupportInitialize)(this.MainFormMenu)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.PnMainTop)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.PnMainSide)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.PvMain)).BeginInit();
       this.PvMain.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.TvMain)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
       this.SuspendLayout();
       // 
@@ -88,58 +88,47 @@
       this.SplitterMainHorizontal.TabStop = false;
       this.SplitterMainHorizontal.Visible = false;
       // 
-      // PnMainSide
-      // 
-      this.PnMainSide.Dock = System.Windows.Forms.DockStyle.Left;
-      this.PnMainSide.Location = new System.Drawing.Point(0, 68);
-      this.PnMainSide.Name = "PnMainSide";
-      this.PnMainSide.Size = new System.Drawing.Size(45, 702);
-      this.PnMainSide.TabIndex = 4;
-      this.PnMainSide.Visible = false;
-      ((Telerik.WinControls.Primitives.FillPrimitive)(this.PnMainSide.GetChildAt(0).GetChildAt(0))).Padding = new System.Windows.Forms.Padding(0);
-      ((Telerik.WinControls.Primitives.BorderPrimitive)(this.PnMainSide.GetChildAt(0).GetChildAt(1))).Padding = new System.Windows.Forms.Padding(0);
-      // 
       // SplitterMainVertical
       // 
-      this.SplitterMainVertical.Location = new System.Drawing.Point(45, 68);
+      this.SplitterMainVertical.Location = new System.Drawing.Point(285, 68);
       this.SplitterMainVertical.Name = "SplitterMainVertical";
-      this.SplitterMainVertical.Size = new System.Drawing.Size(5, 702);
+      this.SplitterMainVertical.Size = new System.Drawing.Size(10, 702);
       this.SplitterMainVertical.TabIndex = 5;
       this.SplitterMainVertical.TabStop = false;
       this.SplitterMainVertical.Visible = false;
       // 
       // PvMain
       // 
-      this.PvMain.Controls.Add(this.PageFirst);
+      this.PvMain.Controls.Add(this.PageEmpty);
       this.PvMain.Controls.Add(this.PageLog);
       this.PvMain.Controls.Add(this.PageSettings);
       this.PvMain.Controls.Add(this.PageAboutProgram);
       this.PvMain.Controls.Add(this.PageExit);
       this.PvMain.Dock = System.Windows.Forms.DockStyle.Fill;
       this.PvMain.Font = new System.Drawing.Font("Verdana", 10F);
-      this.PvMain.Location = new System.Drawing.Point(50, 68);
+      this.PvMain.Location = new System.Drawing.Point(295, 68);
       this.PvMain.Name = "PvMain";
-      this.PvMain.SelectedPage = this.PageFirst;
-      this.PvMain.Size = new System.Drawing.Size(1142, 702);
+      this.PvMain.SelectedPage = this.PageEmpty;
+      this.PvMain.Size = new System.Drawing.Size(897, 702);
       this.PvMain.TabIndex = 6;
       ((Telerik.WinControls.UI.RadPageViewStripElement)(this.PvMain.GetChildAt(0))).StripButtons = Telerik.WinControls.UI.StripViewButtons.Scroll;
       ((Telerik.WinControls.UI.RadPageViewStripElement)(this.PvMain.GetChildAt(0))).Padding = new System.Windows.Forms.Padding(1);
       ((Telerik.WinControls.UI.StripViewItemContainer)(this.PvMain.GetChildAt(0).GetChildAt(0))).Padding = new System.Windows.Forms.Padding(0);
       // 
-      // PageFirst
+      // PageEmpty
       // 
-      this.PageFirst.ItemSize = new System.Drawing.SizeF(64F, 30F);
-      this.PageFirst.Location = new System.Drawing.Point(6, 35);
-      this.PageFirst.Name = "PageFirst";
-      this.PageFirst.Size = new System.Drawing.Size(1130, 661);
-      this.PageFirst.Text = "Page 1";
+      this.PageEmpty.ItemSize = new System.Drawing.SizeF(99F, 30F);
+      this.PageEmpty.Location = new System.Drawing.Point(6, 35);
+      this.PageEmpty.Name = "PageEmpty";
+      this.PageEmpty.Size = new System.Drawing.Size(885, 661);
+      this.PageEmpty.Text = "Page Empty";
       // 
       // PageLog
       // 
       this.PageLog.ItemSize = new System.Drawing.SizeF(83F, 30F);
       this.PageLog.Location = new System.Drawing.Point(6, 35);
       this.PageLog.Name = "PageLog";
-      this.PageLog.Size = new System.Drawing.Size(1045, 660);
+      this.PageLog.Size = new System.Drawing.Size(885, 661);
       this.PageLog.Text = "Messages";
       // 
       // PageSettings
@@ -147,15 +136,15 @@
       this.PageSettings.ItemSize = new System.Drawing.SizeF(74F, 30F);
       this.PageSettings.Location = new System.Drawing.Point(6, 35);
       this.PageSettings.Name = "PageSettings";
-      this.PageSettings.Size = new System.Drawing.Size(1045, 660);
+      this.PageSettings.Size = new System.Drawing.Size(885, 661);
       this.PageSettings.Text = "Settings";
       // 
-      // PageAbout
+      // PageAboutProgram
       // 
       this.PageAboutProgram.ItemSize = new System.Drawing.SizeF(121F, 30F);
       this.PageAboutProgram.Location = new System.Drawing.Point(6, 35);
       this.PageAboutProgram.Name = "PageAboutProgram";
-      this.PageAboutProgram.Size = new System.Drawing.Size(1045, 660);
+      this.PageAboutProgram.Size = new System.Drawing.Size(885, 661);
       this.PageAboutProgram.Text = "About Program";
       // 
       // PageExit
@@ -163,12 +152,32 @@
       this.PageExit.ItemSize = new System.Drawing.SizeF(43F, 30F);
       this.PageExit.Location = new System.Drawing.Point(6, 35);
       this.PageExit.Name = "PageExit";
-      this.PageExit.Size = new System.Drawing.Size(1045, 660);
+      this.PageExit.Size = new System.Drawing.Size(885, 661);
       this.PageExit.Text = "Exit";
       // 
       // NotifyIconMainForm
       // 
       this.NotifyIconMainForm.Text = "Application";
+      // 
+      // TvMain
+      // 
+      this.TvMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
+      this.TvMain.Cursor = System.Windows.Forms.Cursors.Default;
+      this.TvMain.Dock = System.Windows.Forms.DockStyle.Left;
+      this.TvMain.Font = new System.Drawing.Font("Verdana", 9F);
+      this.TvMain.ForeColor = System.Drawing.Color.Black;
+      this.TvMain.HotTracking = false;
+      this.TvMain.ItemHeight = 35;
+      this.TvMain.LineStyle = Telerik.WinControls.UI.TreeLineStyle.Solid;
+      this.TvMain.Location = new System.Drawing.Point(0, 68);
+      this.TvMain.Name = "TvMain";
+      this.TvMain.RightToLeft = System.Windows.Forms.RightToLeft.No;
+      this.TvMain.ShowLines = true;
+      this.TvMain.ShowRootLines = false;
+      this.TvMain.Size = new System.Drawing.Size(285, 702);
+      this.TvMain.SpacingBetweenNodes = -1;
+      this.TvMain.TabIndex = 1;
+      this.TvMain.TreeIndent = 35;
       // 
       // FxMain
       // 
@@ -177,7 +186,7 @@
       this.ClientSize = new System.Drawing.Size(1192, 770);
       this.Controls.Add(this.PvMain);
       this.Controls.Add(this.SplitterMainVertical);
-      this.Controls.Add(this.PnMainSide);
+      this.Controls.Add(this.TvMain);
       this.Controls.Add(this.SplitterMainHorizontal);
       this.Controls.Add(this.PnMainTop);
       this.Controls.Add(this.MainFormMenu);
@@ -191,9 +200,9 @@
       this.Text = "";
       ((System.ComponentModel.ISupportInitialize)(this.MainFormMenu)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.PnMainTop)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.PnMainSide)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.PvMain)).EndInit();
       this.PvMain.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.TvMain)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
@@ -206,14 +215,14 @@
     public Telerik.WinControls.UI.RadMenuItem MenuItemFirstItem;
     public Telerik.WinControls.UI.RadPanel PnMainTop;
     public System.Windows.Forms.Splitter SplitterMainHorizontal;
-    public Telerik.WinControls.UI.RadPanel PnMainSide;
     public System.Windows.Forms.Splitter SplitterMainVertical;
-    public Telerik.WinControls.UI.RadPageViewPage PageFirst;
+    public Telerik.WinControls.UI.RadPageViewPage PageEmpty;
     public Telerik.WinControls.UI.RadPageViewPage PageLog;
     public Telerik.WinControls.UI.RadPageViewPage PageSettings;
     public Telerik.WinControls.UI.RadPageViewPage PageAboutProgram;
     public Telerik.WinControls.UI.RadPageViewPage PageExit;
     public Telerik.WinControls.UI.RadPageView PvMain;
     public System.Windows.Forms.NotifyIcon NotifyIconMainForm;
+    public Telerik.WinControls.UI.RadTreeView TvMain;
   }
 }

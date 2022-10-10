@@ -30,7 +30,7 @@ namespace TvWinForms
 
       AdjustAboutProgramPage();
 
-      AdjustScrollStripButtons();
+      AdjustStripViewContainer();
 
 
       this.MinimumSize = new Size(800, 600);
@@ -39,10 +39,10 @@ namespace TvWinForms
       // https://docs.telerik.com/devtools/winforms/controls/pageview/stripview/fitting-items
     }
 
-    void AdjustScrollStripButtons() // Настроим размеры небольших боковых кнопок, которые прокручивают полосу вкладок //
+    void AdjustStripViewContainer() // Полосу, отображающую вкладки, нужно скрыть //
     {
-      ((RadPageViewStripButtonElement)(this.PvMain.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(0))).MinSize = new Size(26, 26);
-      ((RadPageViewStripButtonElement)(this.PvMain.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(1))).MinSize = new Size(26, 26);
+      ((StripViewItemContainer)(this.PvMain.GetChildAt(0).GetChildAt(0))).Padding = new Padding(0);
+      ((StripViewItemContainer)(this.PvMain.GetChildAt(0).GetChildAt(0))).Visibility = ElementVisibility.Collapsed;
     }
 
 
@@ -68,7 +68,7 @@ namespace TvWinForms
 
     internal void AdjustFirstPage()
     {
-      var page = this.PageFirst;
+      var page = this.PageEmpty;
       page.ItemSize = new SizeF(130F, 30);
       page.Location = new Point(10, 10);
       page.TextAlignment = ContentAlignment.MiddleCenter;

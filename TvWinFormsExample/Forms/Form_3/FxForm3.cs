@@ -23,5 +23,10 @@ namespace TvWinFormsExample
     {
       //Ms.Message("Form number 3 reports", "User visited the page  !").Pos(MsgPos.TopLeft).Info(2);
     }
+
+    private void FxForm3_Load(object sender, EventArgs e)
+    {
+
+    }
   }
 }

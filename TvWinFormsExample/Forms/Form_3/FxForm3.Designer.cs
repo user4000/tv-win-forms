@@ -69,21 +69,25 @@
       this.PvMain.Font = new System.Drawing.Font("Verdana", 10F);
       this.PvMain.Location = new System.Drawing.Point(74, 171);
       this.PvMain.Name = "PvMain";
-      this.PvMain.SelectedPage = this.radPageViewPage4;
-      this.PvMain.Size = new System.Drawing.Size(674, 411);
+      this.PvMain.SelectedPage = this.PageFirst;
+      this.PvMain.Size = new System.Drawing.Size(896, 411);
       this.PvMain.TabIndex = 7;
       ((Telerik.WinControls.UI.RadPageViewStripElement)(this.PvMain.GetChildAt(0))).StripButtons = Telerik.WinControls.UI.StripViewButtons.Scroll;
       ((Telerik.WinControls.UI.RadPageViewStripElement)(this.PvMain.GetChildAt(0))).Padding = new System.Windows.Forms.Padding(1);
+      ((Telerik.WinControls.UI.RadPageViewStripElement)(this.PvMain.GetChildAt(0))).Visibility = Telerik.WinControls.ElementVisibility.Visible;
       ((Telerik.WinControls.UI.StripViewItemContainer)(this.PvMain.GetChildAt(0).GetChildAt(0))).Padding = new System.Windows.Forms.Padding(0);
+      ((Telerik.WinControls.UI.StripViewItemLayout)(this.PvMain.GetChildAt(0).GetChildAt(0).GetChildAt(0))).Visibility = Telerik.WinControls.ElementVisibility.Visible;
+      ((Telerik.WinControls.UI.StripViewButtonsPanel)(this.PvMain.GetChildAt(0).GetChildAt(0).GetChildAt(1))).Visibility = Telerik.WinControls.ElementVisibility.Visible;
       ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.PvMain.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(0))).DrawBorder = true;
       ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.PvMain.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(0))).EnableImageTransparency = false;
       ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.PvMain.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(0))).EnableFocusBorder = false;
       ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.PvMain.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(0))).EnableHighlight = true;
       ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.PvMain.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(0))).ToolTipText = "Scroll Strip Left";
+      ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.PvMain.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(0))).Enabled = false;
       ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.PvMain.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(0))).Visibility = Telerik.WinControls.ElementVisibility.Visible;
       ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.PvMain.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(0))).MinSize = new System.Drawing.Size(32, 24);
       ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.PvMain.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(1))).ToolTipText = "Scroll Strip Right";
-      ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.PvMain.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(1))).Enabled = false;
+      ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.PvMain.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(1))).Enabled = true;
       ((Telerik.WinControls.UI.RadPageViewStripButtonElement)(this.PvMain.GetChildAt(0).GetChildAt(0).GetChildAt(1).GetChildAt(1))).MinSize = new System.Drawing.Size(32, 24);
       // 
       // PageFirst
@@ -91,7 +95,7 @@
       this.PageFirst.ItemSize = new System.Drawing.SizeF(64F, 30F);
       this.PageFirst.Location = new System.Drawing.Point(6, 35);
       this.PageFirst.Name = "PageFirst";
-      this.PageFirst.Size = new System.Drawing.Size(498, 370);
+      this.PageFirst.Size = new System.Drawing.Size(884, 370);
       this.PageFirst.Text = "Page 1";
       // 
       // PageLog
@@ -99,7 +103,7 @@
       this.PageLog.ItemSize = new System.Drawing.SizeF(83F, 30F);
       this.PageLog.Location = new System.Drawing.Point(6, 35);
       this.PageLog.Name = "PageLog";
-      this.PageLog.Size = new System.Drawing.Size(1045, 660);
+      this.PageLog.Size = new System.Drawing.Size(884, 370);
       this.PageLog.Text = "Messages";
       // 
       // PageSettings
@@ -107,7 +111,7 @@
       this.PageSettings.ItemSize = new System.Drawing.SizeF(74F, 30F);
       this.PageSettings.Location = new System.Drawing.Point(6, 35);
       this.PageSettings.Name = "PageSettings";
-      this.PageSettings.Size = new System.Drawing.Size(1045, 660);
+      this.PageSettings.Size = new System.Drawing.Size(884, 370);
       this.PageSettings.Text = "Settings";
       // 
       // PageAboutProgram
@@ -115,7 +119,7 @@
       this.PageAboutProgram.ItemSize = new System.Drawing.SizeF(121F, 30F);
       this.PageAboutProgram.Location = new System.Drawing.Point(6, 35);
       this.PageAboutProgram.Name = "PageAboutProgram";
-      this.PageAboutProgram.Size = new System.Drawing.Size(1045, 660);
+      this.PageAboutProgram.Size = new System.Drawing.Size(884, 370);
       this.PageAboutProgram.Text = "About Program";
       // 
       // PageExit
@@ -155,7 +159,7 @@
       this.radPageViewPage4.ItemSize = new System.Drawing.SizeF(147F, 30F);
       this.radPageViewPage4.Location = new System.Drawing.Point(6, 35);
       this.radPageViewPage4.Name = "radPageViewPage4";
-      this.radPageViewPage4.Size = new System.Drawing.Size(662, 370);
+      this.radPageViewPage4.Size = new System.Drawing.Size(884, 370);
       this.radPageViewPage4.Text = "radPageViewPage4";
       // 
       // FxForm3
@@ -171,6 +175,7 @@
       // 
       this.RootElement.ApplyShapeToControl = true;
       this.Text = "";
+      this.Load += new System.EventHandler(this.FxForm3_Load);
       ((System.ComponentModel.ISupportInitialize)(this.LbFormTwo)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.PvMain)).EndInit();
       this.PvMain.ResumeLayout(false);

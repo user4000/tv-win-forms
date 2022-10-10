@@ -112,6 +112,7 @@
     <Compile Include="Management\Main\K_Main_Form_Closing.cs" />
     <Compile Include="Management\Main\K_Main_Form_Shown.cs" />
     <Compile Include="Management\Main\K_Setting_SubFolder.cs" />
+    <Compile Include="Management\Nodes\Group.cs" />
     <Compile Include="Management\Pages\PagesManager.cs" />
     <Compile Include="Management\Pages\V_Event_Page_Changed.cs" />
     <Compile Include="Management\Pages\W_Find_A_Form.cs" />
@@ -198,6 +199,7 @@
     <EmbeddedResource Include="Forms\7_Error_Message\FxMessage.resx">
       <DependentUpon>FxMessage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

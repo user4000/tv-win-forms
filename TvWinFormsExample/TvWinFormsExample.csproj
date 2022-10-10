@@ -99,11 +99,47 @@
     <Compile Include="Forms\Form_3\FxForm3.Designer.cs">
       <DependentUpon>FxForm3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Form_6\FxForm6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_6\FxForm6.Designer.cs">
+      <DependentUpon>FxForm6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_7\FxForm7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_7\FxForm7.Designer.cs">
+      <DependentUpon>FxForm7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_8\FxForm8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_8\FxForm8.Designer.cs">
+      <DependentUpon>FxForm8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_9\FxForm9.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_9\FxForm9.Designer.cs">
+      <DependentUpon>FxForm9.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form_About_Program\FxAboutProgram.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Form_About_Program\FxAboutProgram.Designer.cs">
       <DependentUpon>FxAboutProgram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_5\FxForm5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_5\FxForm5.Designer.cs">
+      <DependentUpon>FxForm5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form_4\FxForm4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_4\FxForm4.Designer.cs">
+      <DependentUpon>FxForm4.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -117,9 +153,28 @@
     <EmbeddedResource Include="Forms\Form_3\FxForm3.resx">
       <DependentUpon>FxForm3.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_6\FxForm6.resx">
+      <DependentUpon>FxForm6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_7\FxForm7.resx">
+      <DependentUpon>FxForm7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_8\FxForm8.resx">
+      <DependentUpon>FxForm8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_9\FxForm9.resx">
+      <DependentUpon>FxForm9.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_About_Program\FxAboutProgram.resx">
       <DependentUpon>FxAboutProgram.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_5\FxForm5.resx">
+      <DependentUpon>FxForm5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_4\FxForm4.resx">
+      <DependentUpon>FxForm4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -154,6 +209,7 @@
   <ItemGroup>
     <None Include="Resources\ApplicationIcon.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>

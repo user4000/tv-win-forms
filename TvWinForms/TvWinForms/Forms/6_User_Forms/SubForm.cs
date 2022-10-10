@@ -19,10 +19,14 @@ namespace TvWinForms
 
     public RadPageViewPage Page { get; set; }
 
+    public RadTreeNode NodeForm { get; set; }
 
-    public bool FlagTabEnabled { get; } = true; // Активна или отключена верхушка вкладки //
+    public RadTreeNode NodeGroup { get; set; }
 
-    public bool FlagTabVisible { get; } = true; // Видима или скрыта верхушка вкладки //
+
+    public bool FlagNodeEnabled { get; } = true; // Активна или отключена верхушка вкладки //
+
+    public bool FlagNodeVisible { get; } = true; // Видима или скрыта верхушка вкладки //
 
 
     private SubForm(ushort idForm, RadForm form, string uniqueName, string pageText, bool enabled, bool visible)
@@ -30,8 +34,8 @@ namespace TvWinForms
       Form = form;
       UniqueName = uniqueName;
       PageText = pageText;
-      FlagTabEnabled = enabled;
-      FlagTabVisible = visible;
+      FlagNodeEnabled = enabled;
+      FlagNodeVisible = visible;
 
       IdForm = idForm;
 
@@ -54,15 +58,12 @@ namespace TvWinForms
 
 
 
-
-
-
-
-
-
-
-
     internal void SetPage(RadPageViewPage page) => Page = page;
+
+    internal void SetNodeForm(RadTreeNode node) => NodeForm = node;
+
+    internal void SetNodeGroup(RadTreeNode node) => NodeGroup = node;
+
 
 
     internal void ExecStartWorkHandler()
@@ -91,7 +92,6 @@ namespace TvWinForms
         Form.Visible = false;
         Form.Close();
         try { Form.Dispose(); } catch { };
-        //Form = null;
       }
     }
   }

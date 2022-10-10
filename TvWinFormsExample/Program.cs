@@ -148,7 +148,7 @@ namespace TvWinFormsExample
       Func<Task> task1 = async () =>
       {
         WriteToEventLog("Main Exit ASYNC Point 1 - START");
-        await Task.Delay(1000);
+        await Task.Delay(500);
         WriteToEventLog("Main Exit ASYNC Point 1 - END");
       };
 

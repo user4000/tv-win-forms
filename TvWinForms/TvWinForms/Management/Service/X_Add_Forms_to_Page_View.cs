@@ -63,9 +63,9 @@ namespace TvWinForms
       
       page.Item.MinSize = new Size(FrameworkSettings.TabMinimumWidth, 0);
 
-      page.Item.Visibility = subForm.FlagTabVisible ? ElementVisibility.Visible : ElementVisibility.Collapsed;
+      page.Item.Visibility = subForm.FlagNodeVisible ? ElementVisibility.Visible : ElementVisibility.Collapsed;
 
-      page.Item.Enabled = subForm.FlagTabEnabled;
+      page.Item.Enabled = subForm.FlagNodeEnabled;
 
       //if ((subForm.FlagTabVisible) && (MainForm.PvMain.Visible)) page.Refresh();
     }
