@@ -30,7 +30,7 @@ namespace TvWinForms
     /// This method allows you to add a user form and returns a unique numeric identifier for the form.
     /// </summary>
 
-    public ushort AddForm(RadForm form, string uniqueName, string pageText, bool tabEnabled, bool tabVisible) // Добавление формы в очередь //
+    public ushort AddForm(Group group, RadForm form, string uniqueName, string pageText, bool tabEnabled, bool tabVisible) // Добавление формы в очередь //
     {
       ushort id = GetNextIdForm();
 
@@ -38,7 +38,7 @@ namespace TvWinForms
 
       if ( CheckNameIsUnique(uniqueName) == false) return 0;
 
-      SubForm subForm = SubForm.Create(id, form, uniqueName, pageText, tabEnabled, tabVisible);
+      SubForm subForm = SubForm.Create(id, group, form, uniqueName, pageText, tabEnabled, tabVisible);
 
       QueueForms.Enqueue(subForm);
 
@@ -51,7 +51,7 @@ namespace TvWinForms
     /// This method allows you to add a user form and returns a unique numeric identifier for the form.
     /// </summary>
 
-    public ushort AddForm<T>(string uniqueName, string pageText, bool tabEnabled, bool tabVisible) where T : RadForm, new() // Добавление формы в очередь //
+    public ushort AddForm<T>(Group group, string uniqueName, string pageText, bool tabEnabled, bool tabVisible) where T : RadForm, new() // Добавление формы в очередь //
     {
       ushort id = GetNextIdForm();
 
@@ -59,7 +59,7 @@ namespace TvWinForms
 
       if (CheckNameIsUnique(uniqueName) == false) return 0;
 
-      SubForm subForm = SubForm.Create<T>(id, uniqueName, pageText, tabEnabled, tabVisible);
+      SubForm subForm = SubForm.Create<T>(id, group, uniqueName, pageText, tabEnabled, tabVisible);
 
       QueueForms.Enqueue(subForm);
 

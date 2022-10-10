@@ -4,12 +4,12 @@ namespace TvWinForms
 {
   public partial class FrameworkService
   {
-    public void SetAboutProgramForm(ushort idForm)
+    void SetAboutProgramForm(ushort idForm)
     {
       IdAboutProgramForm = idForm;
     }
 
-    public void SetAboutProgramForm(string UniqueFormName)
+    void SetAboutProgramForm(string UniqueFormName)
     {
       CodeAboutProgramForm = UniqueFormName;
     }

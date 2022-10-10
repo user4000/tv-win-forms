@@ -1,8 +1,8 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace TvWinForms
 {
+
   public class Group
   {
     public string Text { get; private set; }
@@ -18,10 +18,12 @@ namespace TvWinForms
 
     private Group(string code, string text, string rank)
     {
-      Text = text; Code = code; Rank = rank;         
+      Text = text ?? string.Empty;
+      Code = code ?? string.Empty;
+      Rank = rank ?? string.Empty;         
     }
 
-    public static Group Create(string code, string text, string rank)
+    internal static Group Create(string code, string text, string rank)
     {
       Group group = new Group(code, text, rank);
       return group;

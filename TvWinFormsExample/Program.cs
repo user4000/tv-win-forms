@@ -67,19 +67,27 @@ namespace TvWinFormsExample
 
     static void SetUserForms()
     {
-      ushort f1 = Service.AddForm<FxForm1>("form1", "My Form 1", true, true);
+      Group grUsers = GroupManager.Create("users", "Work with users", "01");
+      Group grContracts = GroupManager.Create("contracts", "Contracts and Consignments", "02");
+      Group grWarehouse = GroupManager.Create("movement", "Item movement", "03");
+    
 
-      ushort f2 = Service.AddForm<FxForm2>("form2", "My Form 2", true, true);
+      ushort f1 = Service.AddForm<FxForm1>(grUsers,  "form1", "My Form 1", true, true);
+      ushort f2 = Service.AddForm<FxForm2>(grUsers, "form2", "My Form 2", true, true);
+      ushort f3 = Service.AddForm<FxForm3>(grUsers, "form3", "My Form 3", true, true);
 
-      ushort f3 = Service.AddForm<FxForm3>("form3", "My Form 3", true, true);
+      ushort f4 = Service.AddForm<FxForm1>(grContracts, "form4", "My Form 4", true, true);
+      ushort f5 = Service.AddForm<FxForm2>(grContracts, "form5", "My Form 5", true, true);
+      ushort f6 = Service.AddForm<FxForm3>(grContracts, "form6", "My Form 6", true, true);
+
+      ushort f7 = Service.AddForm<FxForm1>(grWarehouse, "form7", "My Form 7", true, true);
+      ushort f8 = Service.AddForm<FxForm2>(grWarehouse, "form8", "My Form 8", true, true);
+      ushort f9 = Service.AddForm<FxForm3>(grWarehouse, "form9", "My Form 9", true, true);
+
+      ushort aboutProgram = Service.AddForm<FxAboutProgram>(GroupManager.GroupStandardAboutProgram, "formAboutProgram", "About my super program", true, true);
 
 
-      ushort f4 = Service.AddForm<FxAboutProgram>("formAboutProgram", "About my super program", true, true);
-
-
-      Service.SetStartForm("form1");                    // or Service.SetStartForm(f3);
-
-      Service.SetAboutProgramForm("formAboutProgram");  // or Service.SetAboutProgramForm(f4);
+      Service.SetStartForm("form1");   // or Service.SetStartForm(f3);
     }
 
     static void SetApplicationEvents()

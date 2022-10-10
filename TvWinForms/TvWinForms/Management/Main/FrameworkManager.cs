@@ -24,8 +24,7 @@ namespace TvWinForms
 
     public static CxThemeManager ThemeManager { get; } = CxThemeManager.Create();
 
-
-
+    public static CxGroupManager GroupManager { get; } = CxGroupManager.CreateManager();
 
 
     public static T ApplicationSettings<T>() => (T)(object)Service.CurrentApplicationSettings;

@@ -19,7 +19,7 @@ namespace TvWinForms
       FxLog form = new FxLog();
       FormLog = form;
       AlertService = new TmAlertService(this, FormLog);
-      AddForm(form, null, FrameworkSettings.HeaderFormLog, true, true);
+      AddForm(GroupManager.GroupStandardMessagesAndSettings, form, null, FrameworkSettings.HeaderFormLog, true, true);
     }
 
     public void CreateFormSetting()
@@ -43,14 +43,14 @@ namespace TvWinForms
 
       FormSettings.AcceptLoadedSettings(loadedSettings);
 
-      AddForm(form, null, FrameworkSettings.HeaderFormSettings, true, true);
+      AddForm(GroupManager.GroupStandardMessagesAndSettings, form, null, FrameworkSettings.HeaderFormSettings, true, true);
     }
 
     public void CreateFormExit()
     {
       FxExit form = new FxExit();
       FormExit = form;
-      AddForm(form, null, FrameworkSettings.HeaderFormExit, true, true);
+      AddForm(GroupManager.GroupStandardExit, form, null, FrameworkSettings.HeaderFormExit, true, true);
     }
 
     RadPageViewPage TryToFindExistingPage(RadForm form)

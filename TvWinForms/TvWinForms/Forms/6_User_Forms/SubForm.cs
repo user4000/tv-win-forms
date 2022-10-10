@@ -17,25 +17,27 @@ namespace TvWinForms
 
     public string PageText { get; } = string.Empty;
 
-    public RadPageViewPage Page { get; set; }
+    public RadPageViewPage Page { get; private set; }
 
-    public RadTreeNode NodeForm { get; set; }
+    public RadTreeNode NodeForm { get; private set; }
 
-    public RadTreeNode NodeGroup { get; set; }
+    public RadTreeNode NodeGroup { get; private set; }
 
+    public Group FormGroup { get; private set; }
 
     public bool FlagNodeEnabled { get; } = true; // Активна или отключена верхушка вкладки //
 
     public bool FlagNodeVisible { get; } = true; // Видима или скрыта верхушка вкладки //
 
 
-    private SubForm(ushort idForm, RadForm form, string uniqueName, string pageText, bool enabled, bool visible)
+    private SubForm(ushort idForm, Group group, RadForm form, string uniqueName, string pageText, bool enabled, bool visible)
     { 
       Form = form;
       UniqueName = uniqueName;
       PageText = pageText;
       FlagNodeEnabled = enabled;
       FlagNodeVisible = visible;
+      FormGroup = group;
 
       IdForm = idForm;
 
@@ -43,16 +45,16 @@ namespace TvWinForms
       TypeName = TypeForm.FullName;
     }
 
-    internal static SubForm Create(ushort idForm, RadForm form, string uniqueName, string pageText, bool enabled, bool visible)
+    internal static SubForm Create(ushort idForm, Group group, RadForm form, string uniqueName, string pageText, bool enabled, bool visible)
     {
-      SubForm userForm = new SubForm(idForm, form, uniqueName, pageText, enabled, visible);
+      SubForm userForm = new SubForm(idForm, group, form, uniqueName, pageText, enabled, visible);
       return userForm;
     }
 
-    internal static SubForm Create<T>(ushort idForm, string uniqueName, string pageText, bool enabled, bool visible) where T : RadForm, new()
+    internal static SubForm Create<T>(ushort idForm, Group group, string uniqueName, string pageText, bool enabled, bool visible) where T : RadForm, new()
     {
       T form = new T();      
-      return Create(idForm, form, uniqueName, pageText, enabled, visible);
+      return Create(idForm, group,  form, uniqueName, pageText, enabled, visible);
     }
 
 
