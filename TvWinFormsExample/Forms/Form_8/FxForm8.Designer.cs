@@ -1,4 +1,4 @@
-﻿namespace TvWinFormsExample.Forms
+﻿namespace TvWinFormsExample
 {
     partial class FxForm8
     {

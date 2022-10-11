@@ -65,9 +65,18 @@ namespace TvWinForms
       CreateTreeNode(subForm);
     }
 
-    internal bool ThisIsGroupNode(RadTreeNode node)
+    public bool ThisIsGroupNode(RadTreeNode node)
     {
       return (node.Tag != null) && (node.Tag is string) && (string.IsNullOrWhiteSpace((string)node.Tag) == false);
+    }
+
+    public SubForm GetSubForm(RadTreeNode node)
+    {
+      SubForm result = null;
+
+      if ((node.Value != null) && (node.Value is SubForm)) result = (SubForm)(node.Value);
+
+      return result;
     }
 
     void CreateTreeNode(SubForm subForm)
@@ -76,7 +85,7 @@ namespace TvWinForms
       {
         Text = subForm.PageText,
         Value = subForm,
-        Tag = string.Empty,
+        Tag = string.Empty, 
         Font = FrameworkManager.MainForm.TvMain.Font
       };
 

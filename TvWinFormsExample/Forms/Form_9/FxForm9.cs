@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using Telerik.WinControls.UI;
 
-namespace TvWinFormsExample.Forms
+namespace TvWinFormsExample
 {
   public partial class FxForm9 : RadForm
   {

@@ -100,7 +100,7 @@ namespace TvWinForms
     RadTreeNode CreateGroupNode(Group group) // Это элемент, который в себе будет содержать другие элементы //
     {
       RadTreeNode node = new RadTreeNode();
-      node.Text = group.Text;
+      node.Text = "   " + group.Text;
       node.Tag = group.Code;
       node.Value = group.Code;
       node.Font = FrameworkManager.MainForm.TvMain.Font;

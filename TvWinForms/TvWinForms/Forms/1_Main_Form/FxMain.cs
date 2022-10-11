@@ -26,17 +26,28 @@ namespace TvWinForms
         this.Opacity = 0;
       }
 
+      this.MinimumSize = new Size(800, 600);
+
       AdjustFirstPage();
 
       AdjustAboutProgramPage();
 
       AdjustStripViewContainer();
 
+      AdjustMainPageviewAndTreeview();
+    }
 
-      this.MinimumSize = new Size(800, 600);
-
-      // TODO: Сделать также настроку для PvMain  ItemFitMode
-      // https://docs.telerik.com/devtools/winforms/controls/pageview/stripview/fitting-items
+    void AdjustMainPageviewAndTreeview() // Настроим центральные элементы главной формы //
+    {
+      PnTreeview.Dock = DockStyle.Left;
+      SplitterMainVertical.Dock = DockStyle.Left;
+      PvMain.Dock = DockStyle.Fill;
+      SplitterMainVertical.BringToFront();
+      PvMain.BringToFront();
+      PnTreeview.PanelElement.PanelBorder.Visibility = ElementVisibility.Collapsed;
+      TvMain.LineColor = Color.LightGray;
+      TvMain.LineStyle = TreeLineStyle.Dot;
+      //TvMain.Padding = new Padding(10, 5, 5, 5);
     }
 
     void AdjustStripViewContainer() // Полосу, отображающую вкладки, нужно скрыть //
@@ -89,7 +100,7 @@ namespace TvWinForms
 
     internal void SetEvents()
     {
-      if (FrameworkManager.Events.MainFormLoad != null)  this.Load += new EventHandler(EventFormLoad);
+      this.Load += new EventHandler(EventFormLoad);
 
       if (FrameworkManager.Events.MainFormResize != null) this.Resize += new EventHandler(EventResize);
 
@@ -174,8 +185,11 @@ namespace TvWinForms
 
     public void EventFormLoad(object sender, EventArgs e)
     {
+      Service.TreeviewCreateGroups();           // Создание главных элементов Treeview //
 
-      FrameworkManager.Events.MainFormLoad();
+      Service.PlaceAllSubFormsToMainPageView(); // Создание всех форм пользователя, элементов Treeview и вкладок Pageview //
+
+      FrameworkManager.Events.MainFormLoad?.Invoke();
     }
 
     internal void VisualEffectFadeIn()
@@ -228,9 +242,7 @@ namespace TvWinForms
     internal void ShowMainPageView(bool show)
     {
       if (FrameworkSettings.HideMainPageViewBeforeMainFormIsShown == false) return;
-      
-      //MainForm.PvMain.Visible = show;
-
+     
       ((RadPageViewStripElement)PvMain.ViewElement).ItemContainer.Visibility = show ? ElementVisibility.Visible : ElementVisibility.Collapsed;
     }
 
