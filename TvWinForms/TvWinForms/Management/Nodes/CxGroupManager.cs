@@ -1,4 +1,5 @@
 ﻿using System;
+using Telerik.WinControls.UI;
 using System.Collections.Generic;
 
 namespace TvWinForms
@@ -11,6 +12,7 @@ namespace TvWinForms
     public string CodeStandardGroupExitFromTheApplication { get; } = "Framework_standard_group____main_exit";
 
     public string CodeStandardGroupAboutProgram { get; } = "Framework_standard_group____about_program";
+
 
 
     List<Group> Groups { get; } = new List<Group>();
@@ -93,6 +95,26 @@ namespace TvWinForms
       GroupStandardMessagesAndSettings = this.Create(CodeStandardGroupMessagesAndSettings, "Messages and Settings", "z01");
       GroupStandardAboutProgram = this.Create(CodeStandardGroupAboutProgram, "About Program", "z02");
       GroupStandardExit = this.Create(CodeStandardGroupExitFromTheApplication, "Exit", "z03");
+    }
+
+    RadTreeNode CreateGroupNode(Group group) // Это элемент, который в себе будет содержать другие элементы //
+    {
+      RadTreeNode node = new RadTreeNode();
+      node.Text = group.Text;
+      node.Tag = group.Code;
+      node.Value = group.Code;
+      node.Font = FrameworkManager.MainForm.TvMain.Font;
+      return node;
+    }
+
+    internal void TreeviewCreateGroups()
+    {
+      FrameworkManager.MainForm.TvMain.AllowEdit = false;
+      
+      foreach (Group group in Groups)
+      {        
+        FrameworkManager.MainForm.TvMain.Nodes.Add(CreateGroupNode(group));
+      }
     }
   }
 }

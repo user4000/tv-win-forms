@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Drawing;
+using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using static TvWinForms.FrameworkManager;
 
@@ -11,18 +11,15 @@ namespace TvWinForms
     {
       RadPageViewPage page = null;
 
-      if ((FlagAboutProgramFormHasBeenCreated == false) && (IsAboutProgramForm(form)))
+      page = new RadPageViewPage() // Создание новой вкладки //
       {
-        // Проверим, является ли данная форма формой типа "О программе" и если является, то поместим её на уже существующую вкладку //
-        FlagAboutProgramFormHasBeenCreated = true;
-        page = MainForm.PageAboutProgram; // Новую вкладку создавать не нужно, вкладка уже существует и находится на фиксированном месте //
-        page.Name = form.UniqueName;
-        page.Text = form.PageText;        
-        return page;
-      }
+        Name = form.UniqueName,
+        Text = form.PageText
+      };
 
-      page = new RadPageViewPage() { Name = form.UniqueName, Text = form.PageText };      // Создание новой вкладки //
-      MainForm.PvMain.Pages.Insert(++IndexPage, page); // Помещение новой вкладки по индексу в определённом порядке //
+      if (page.Item != null) page.Item.Visibility = ElementVisibility.Collapsed;
+
+      MainForm.PvMain.Pages.Add(page); 
 
       return page;
     }
@@ -31,33 +28,11 @@ namespace TvWinForms
     {
       RadPageViewPage page = null;
 
-      if (FlagItIsTimeToAddStandardForms == false)
-      {
-        page = CreateNewPageInnerMethod(form);
-      }
-      else
-      {
-        page = TryToFindExistingPage(form.Form);
-      }
+      page = CreateNewPageInnerMethod(form);
 
       if (page == null) throw new ApplicationException("Error! Failed to find a [PageView] for standard form!"); 
 
       MainForm.PvMain.SelectedPage = null;
-
-      page.ItemSize = new SizeF(120F, 30);
-      page.Location = new Point(10, 10);
-      page.TextAlignment = ContentAlignment.MiddleCenter;
-
-      RadPageViewStripElement element = (RadPageViewStripElement)MainForm.PvMain.GetChildAt(0);
-
-      element.ShowItemPinButton = false;
-      element.StripButtons = StripViewButtons.Scroll;
-      element.ItemAlignment = StripViewItemAlignment.Near;
-      element.ItemFitMode = StripViewItemFitMode.FillHeight;
-      element.ShowItemCloseButton = false;
-      element.ItemSpacing = FrameworkSettings.PageViewItemSpacing;
-
-      if (FrameworkSettings.StripOrientation != StripViewAlignment.Top) SetMainPageViewTabOrientation(FrameworkSettings.StripOrientation);
 
       return page;
     }

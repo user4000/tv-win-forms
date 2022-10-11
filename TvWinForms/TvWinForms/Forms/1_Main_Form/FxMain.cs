@@ -174,6 +174,7 @@ namespace TvWinForms
 
     public void EventFormLoad(object sender, EventArgs e)
     {
+
       FrameworkManager.Events.MainFormLoad();
     }
 

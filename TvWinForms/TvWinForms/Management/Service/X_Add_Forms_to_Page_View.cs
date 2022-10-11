@@ -10,11 +10,7 @@ namespace TvWinForms
 {
   partial class FrameworkService
   {
-    int IndexPage { get; set; } = 0;
-
     bool PageExists(string uniqueName) => DicForms.ContainsKey(uniqueName);
-
-
 
     internal void AddSubFormToDictionary(SubForm form)
     {
@@ -56,7 +52,6 @@ namespace TvWinForms
 
       AddPageAndFormToDictionary(page, form);
 
-
       subForm.SetPage(page);
 
       page.Tag = subForm;
@@ -67,7 +62,42 @@ namespace TvWinForms
 
       page.Item.Enabled = subForm.FlagNodeEnabled;
 
-      //if ((subForm.FlagTabVisible) && (MainForm.PvMain.Visible)) page.Refresh();
+      CreateTreeNode(subForm);
+    }
+
+    internal bool ThisIsGroupNode(RadTreeNode node)
+    {
+      return (node.Tag != null) && (node.Tag is string) && (string.IsNullOrWhiteSpace((string)node.Tag) == false);
+    }
+
+    void CreateTreeNode(SubForm subForm)
+    {
+      RadTreeNode node = new RadTreeNode()
+      {
+        Text = subForm.PageText,
+        Value = subForm,
+        Tag = string.Empty,
+        Font = FrameworkManager.MainForm.TvMain.Font
+      };
+
+      string codeOfGroup = subForm.FormGroup.Code;
+
+      RadTreeNode[] nodesFound = MainForm.TvMain.FindNodes(oneNode => (ThisIsGroupNode(oneNode)) && ((string)oneNode.Tag == codeOfGroup));
+
+      if (nodesFound.Length == 1)
+      {
+        RadTreeNode groupNode = nodesFound[0];
+        groupNode.Nodes.Add(node);
+        subForm.SetNodeForm(node);
+        subForm.SetNodeGroup(groupNode);
+        groupNode.Expand();       
+      }
+      else
+      {
+        string error = $"[TvWinForms] framework: WARNING !!! Failed to find a group for sub-form {subForm.UniqueName} !";
+        RadMessageBox.Show(error, "ERROR !", MessageBoxButtons.OK, RadMessageIcon.Error);
+        Trace.WriteLine(error);
+      }
     }
   }
 }

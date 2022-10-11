@@ -50,7 +50,10 @@ namespace TvWinForms
       {
         if (pair.Value.IdForm == IdStartForm)
         {
-          result = SelectPage(pair.Value.Page);
+          //result = SelectPage(pair.Value.Page);
+          // TODO: Сделать проверку, что не была выбрана форма EXIT //
+          pair.Value.NodeForm.Selected = true;
+          result = true;
           break;
         }
       }
@@ -68,7 +71,10 @@ namespace TvWinForms
       {
         if (pair.Value.UniqueName == CodeStartForm)
         {
-          result = SelectPage(pair.Value.Page);
+          //result = SelectPage(pair.Value.Page);
+          // TODO: Сделать проверку, что не была выбрана форма EXIT //
+          pair.Value.NodeForm.Selected = true;
+          result = true;
           break;
         }
       }

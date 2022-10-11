@@ -64,7 +64,6 @@ namespace TvWinFormsExample
       Events.OverrideLoadedFrameworkSettings = OverrideFrameworkSettingsAfterLoadingFromTextFile;
     }
 
-
     static void SetUserForms()
     {
       Group grUsers = GroupManager.Create("users", "Work with users", "01");
@@ -72,7 +71,7 @@ namespace TvWinFormsExample
       Group grWarehouse = GroupManager.Create("movement", "Item movement", "03");
     
 
-      ushort f1 = Service.AddForm<FxForm1>(grUsers,  "form1", "My Form 1", true, true);
+      ushort f1 = Service.AddForm<FxForm1>(grUsers, "form1", "My Form 1", true, true);
       ushort f2 = Service.AddForm<FxForm2>(grUsers, "form2", "My Form 2", true, true);
       ushort f3 = Service.AddForm<FxForm3>(grUsers, "form3", "My Form 3", true, true);
 
@@ -86,8 +85,7 @@ namespace TvWinFormsExample
 
       ushort aboutProgram = Service.AddForm<FxAboutProgram>(GroupManager.GroupStandardAboutProgram, "formAboutProgram", "About my super program", true, true);
 
-
-      Service.SetStartForm("form1");   // or Service.SetStartForm(f3);
+      Service.SetStartForm("form1"); // or Service.SetStartForm(f3);
     }
 
     static void SetApplicationEvents()
@@ -144,11 +142,8 @@ namespace TvWinFormsExample
       Events.StartByTimer = action6; // <--- Ещё одна стартовая точка приложения, выполняемая с задержкой (настройка FrameworkSettings.StartTimerIntervalMilliseconds) // 
     }
 
-
-
     static void SetEventsMainFormClosing()
     {
-
       Action action1 = () => { WriteToEventLog("Main Exit Test 1"); };
 
       Action<object, FormClosedEventArgs> action2 = (object sender, FormClosedEventArgs args) => { WriteToEventLog("Main Exit Test 2"); };
@@ -160,15 +155,12 @@ namespace TvWinFormsExample
         WriteToEventLog("Main Exit ASYNC Point 1 - END");
       };
 
-
       Events.MainFormClosing = action1;
 
       Events.MainFormClosingAsync = task1;
 
       Events.MainFormClosed = action2;
     }
-
-
 
 
     /// <summary>

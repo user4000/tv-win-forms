@@ -95,7 +95,6 @@
       this.SplitterMainVertical.Size = new System.Drawing.Size(10, 702);
       this.SplitterMainVertical.TabIndex = 5;
       this.SplitterMainVertical.TabStop = false;
-      this.SplitterMainVertical.Visible = false;
       // 
       // PvMain
       // 

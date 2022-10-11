@@ -14,20 +14,20 @@ namespace TvWinForms
       }
     }
 
+    public void TreeviewCreateGroups()
+    {
+      FrameworkManager.GroupManager.TreeviewCreateGroups();
+    }
+
     public void PlaceAllSubFormsToMainPageView()
     {
-      AddFormsFromQueueToPageView(); // Добавляем формы из очереди на Page View //
-
-      FlagItIsTimeToAddStandardForms = true;
-
       CreateFormSetting(); 
       CreateFormLog();
       CreateFormExit();
 
       AddFormsFromQueueToPageView(); // Добавляем формы из очереди на Page View //
-
-      // Выполнить событие IStartForm для каждой формы, которая поддерживает этот интерфейс //
-      ExecStartWorkHandlerForEachSubForm();
+   
+      ExecStartWorkHandlerForEachSubForm(); // Выполнить событие IStartForm для каждой формы, которая поддерживает этот интерфейс //
     }
 
     internal void ExecStartWorkHandlerForEachSubForm()

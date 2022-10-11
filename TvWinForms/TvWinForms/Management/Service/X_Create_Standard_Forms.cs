@@ -12,8 +12,6 @@ namespace TvWinForms
 {
   public partial class FrameworkService
   {
-    bool FlagItIsTimeToAddStandardForms { get; set; } = false;
-
     public void CreateFormLog()
     {
       FxLog form = new FxLog();
