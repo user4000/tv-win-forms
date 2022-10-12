@@ -53,6 +53,14 @@ namespace TvWinForms
       FrameworkSettings.FlagMainFormStartMinimized = settings.FlagMainFormStartMinimized;
 
       FrameworkSettings.FlagMinimizeMainFormToSystemTray = settings.FlagMinimizeMainFormToSystemTray;
+
+      FrameworkSettings.MainFormCaption = settings.MainFormCaption;
+
+      FrameworkSettings.TreeviewNavigationAlwaysCollapseOnExit = settings.TreeviewNavigationAlwaysCollapseOnExit;
+
+      FrameworkSettings.TreeviewNavigationAlwaysExpandOnSelect = settings.TreeviewNavigationAlwaysExpandOnSelect;
+
+      FrameworkSettings.TreeviewNavigationPreventCollapseOnExit = settings.TreeviewNavigationPreventCollapseOnExit;
     }
 
 

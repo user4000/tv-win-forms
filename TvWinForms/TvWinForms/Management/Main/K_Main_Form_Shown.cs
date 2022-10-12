@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Windows.Forms;
-using System.Threading.Tasks;
 using Telerik.WinControls.UI;
 
 namespace TvWinForms
@@ -15,7 +13,7 @@ namespace TvWinForms
 
       Events.BeforeMainFormBecomesVisible?.Invoke();
 
-      MainForm.TvMain.TreeViewElement.BackColor = MainForm.PageEmpty.BackColor;  
+      MainForm.TvMain.TreeViewElement.BackColor = MainForm.BackColor; //MainForm.PageEmpty.BackColor;  
 
       MainForm.VisualEffectFadeIn();
 

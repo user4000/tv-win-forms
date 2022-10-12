@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Drawing;
 using TvWinForms.Form;
-using System.Diagnostics;
-using Telerik.WinControls;
-using System.Threading.Tasks;
-using Telerik.WinControls.UI;
-using System.Collections.Generic;
 using static TvWinForms.FrameworkManager;
 
 namespace TvWinForms
@@ -49,33 +43,6 @@ namespace TvWinForms
       FxExit form = new FxExit();
       FormExit = form;
       AddForm(GroupManager.GroupStandardExit, form, null, FrameworkSettings.HeaderFormExit, true, true);
-    }
-
-    RadPageViewPage TryToFindExistingPage(RadForm form)
-    {
-      RadPageViewPage page = null;
-
-      //Trace.WriteLine($"{form.GetType().FullName} --- {typeof(FxLog).FullName} --- {typeof(FxExit).FullName}");
-
-      if (form.GetType().FullName == typeof(FxLog).FullName)
-      {
-        MainForm.PageLog.Text = FrameworkSettings.HeaderFormLog;
-        return MainForm.PageLog;
-      }
-
-      if (form.GetType().FullName == typeof(FxExit).FullName)
-      {
-        MainForm.PageExit.Text = FrameworkSettings.HeaderFormExit;
-        return MainForm.PageExit;
-      }
-
-      if (form.GetType().FullName == typeof(FxSettings).FullName)
-      {
-        MainForm.PageSettings.Text = FrameworkSettings.HeaderFormSettings;
-        return MainForm.PageSettings;
-      }
-
-      return page;
     }
   }
 }

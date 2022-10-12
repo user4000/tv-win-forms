@@ -11,21 +11,30 @@ namespace TvWinForms
 
     public string Rank { get; private set; }
 
+
+    public bool ExpandOnSelect { get; private set; } = false;
+
+    public bool CollapseOnExit { get; private set; } = false;
+
+
+
     private Group()
     {
 
     }
 
-    private Group(string code, string text, string rank)
+    private Group(string code, string text, string rank, bool expandOnSelect, bool collapseOnExit)
     {
       Text = text ?? string.Empty;
       Code = code ?? string.Empty;
-      Rank = rank ?? string.Empty;         
+      Rank = rank ?? string.Empty;
+      ExpandOnSelect = expandOnSelect;
+      CollapseOnExit = collapseOnExit;
     }
 
-    internal static Group Create(string code, string text, string rank)
+    internal static Group Create(string code, string text, string rank, bool expandOnSelect, bool collapseOnExit)
     {
-      Group group = new Group(code, text, rank);
+      Group group = new Group(code, text, rank, expandOnSelect, collapseOnExit);
       return group;
     }
   }

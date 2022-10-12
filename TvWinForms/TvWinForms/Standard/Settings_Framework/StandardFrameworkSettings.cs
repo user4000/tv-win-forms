@@ -93,9 +93,25 @@ namespace TvWinForms
 
 
 
+    /// <summary>
+    /// The property is stored in the file.
+    /// </summary>
+    [JsonProperty(Order = 25)]
+    public bool TreeviewNavigationAlwaysExpandOnSelect { get; set; } = false;
 
 
+    /// <summary>
+    /// The property is stored in the file.
+    /// </summary>
+    [JsonProperty(Order = 25)]
+    public bool TreeviewNavigationAlwaysCollapseOnExit { get; set; } = false;
 
+
+    /// <summary>
+    /// The property is stored in the file.
+    /// </summary>
+    [JsonProperty(Order = 26)]
+    public bool TreeviewNavigationPreventCollapseOnExit { get; set; } = false;
 
 
 
@@ -140,6 +156,14 @@ namespace TvWinForms
 
 
 
+
+    /// <summary>
+    /// The property is stored in the file.
+    /// </summary>
+
+    [JsonProperty(Order = 50)]
+
+    public string MainFormCaption { get; set; } = string.Empty;
 
 
     /// <summary>

@@ -1,4 +1,5 @@
 ﻿using System;
+using TvWinForms.Form;
 using Telerik.WinControls;
 using Telerik.WinControls.UI;
 using static TvWinForms.FrameworkManager;
@@ -11,11 +12,23 @@ namespace TvWinForms
     {
       RadPageViewPage page = null;
 
-      page = new RadPageViewPage() // Создание новой вкладки //
+      if (form.Form is FxExit) page = MainForm.PageExit;
+
+      if (form.Form is FxLog) page = MainForm.PageLog;
+
+      if (form.Form is FxSettings) page = MainForm.PageSettings;
+
+
+      if (page == null)
       {
-        Name = form.UniqueName,
-        Text = form.PageText
-      };
+        page = new RadPageViewPage() // Создание новой вкладки //
+        {
+          Name = form.UniqueName,
+          Text = form.PageText
+        };
+      }
+
+      
 
       if (page.Item != null) page.Item.Visibility = ElementVisibility.Collapsed;
 

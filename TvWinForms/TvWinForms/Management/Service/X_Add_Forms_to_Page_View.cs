@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Drawing;
 using System.Diagnostics;
 using Telerik.WinControls;
 using System.Windows.Forms;
 using Telerik.WinControls.UI;
-using static TvWinForms.FrameworkManager;
 
 namespace TvWinForms
 {
@@ -55,58 +53,73 @@ namespace TvWinForms
       subForm.SetPage(page);
 
       page.Tag = subForm;
-      
-      page.Item.MinSize = new Size(FrameworkSettings.TabMinimumWidth, 0);
+     
+      //page.Item.MinSize = new Size(FrameworkSettings.TabMinimumWidth, 0);
 
-      page.Item.Visibility = subForm.FlagNodeVisible ? ElementVisibility.Visible : ElementVisibility.Collapsed;
+      //page.Item.Visibility = subForm.FlagNodeVisible ? ElementVisibility.Visible : ElementVisibility.Collapsed;
 
-      page.Item.Enabled = subForm.FlagNodeEnabled;
+      //page.Item.Enabled = subForm.FlagNodeEnabled;
 
       CreateTreeNode(subForm);
-    }
-
-    public bool ThisIsGroupNode(RadTreeNode node)
-    {
-      return (node.Tag != null) && (node.Tag is string) && (string.IsNullOrWhiteSpace((string)node.Tag) == false);
     }
 
     public SubForm GetSubForm(RadTreeNode node)
     {
       SubForm result = null;
 
-      if ((node.Value != null) && (node.Value is SubForm)) result = (SubForm)(node.Value);
+      if (node is CxNode) result = (node as CxNode).MySubForm;
+
+      // if ((node.Value != null) && (node.Value is SubForm)) result = (SubForm)(node.Value);
 
       return result;
     }
 
-    void CreateTreeNode(SubForm subForm)
+    void CreateTreeNode(SubForm subForm) // NOTE: Create node for user form //
     {
-      RadTreeNode node = new RadTreeNode()
-      {
-        Text = subForm.PageText,
-        Value = subForm,
-        Tag = string.Empty, 
-        Font = FrameworkManager.MainForm.TvMain.Font
-      };
-
       string codeOfGroup = subForm.FormGroup.Code;
 
-      RadTreeNode[] nodesFound = MainForm.TvMain.FindNodes(oneNode => (ThisIsGroupNode(oneNode)) && ((string)oneNode.Tag == codeOfGroup));
+      //RadTreeNode[] nodesFound = MainForm.TvMain.FindNodes(oneNode => (FrameworkManager.GroupManager.ThisIsGroupNode(oneNode)) && ((string)oneNode.Tag == codeOfGroup));
 
-      if (nodesFound.Length == 1)
-      {
-        RadTreeNode groupNode = nodesFound[0];
-        groupNode.Nodes.Add(node);
-        subForm.SetNodeForm(node);
-        subForm.SetNodeGroup(groupNode);
-        groupNode.Expand();       
-      }
-      else
+      // Now we have to find an existing group node for the user form //
+      RadTreeNode[] nodesFound = MainForm.TvMain.FindNodes(oneNode => (FrameworkManager.GroupManager.IsGroupNode(oneNode)) && (((CxNode)oneNode).MyGroup.Code == codeOfGroup));
+
+
+      if (nodesFound.Length != 1)
       {
         string error = $"[TvWinForms] framework: WARNING !!! Failed to find a group for sub-form {subForm.UniqueName} !";
         RadMessageBox.Show(error, "ERROR !", MessageBoxButtons.OK, RadMessageIcon.Error);
         Trace.WriteLine(error);
+        return;
       }
+
+      CxNode node = new CxNode()
+      {
+        Text = subForm.PageText,
+        Font = FrameworkManager.MainForm.TvMain.Font,
+      };
+
+      RadTreeNode groupNode = nodesFound[0];
+      groupNode.Nodes.Add(node);
+      subForm.SetNodeForm(node);
+      subForm.SetNodeGroup(groupNode);
+
+      Group group = FrameworkManager.GroupManager.GetGroup(groupNode);
+
+      node.SetForm(subForm);
+      node.SetGroup(group);
+
+
+      bool expandGroup = false;
+
+      if ((subForm.Page != MainForm.PageExit)) expandGroup = true;
+
+      if ((group != null) && (group.CollapseOnExit)) expandGroup = false;
+
+      if (expandGroup) groupNode.Expand();
+
+      node.Enabled = subForm.FlagNodeEnabled;
+
+      node.Visible = subForm.FlagNodeVisible;
     }
   }
 }

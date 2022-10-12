@@ -122,6 +122,7 @@
     <Compile Include="Management\Pages\X_Enable_Page.cs" />
     <Compile Include="Management\Pages\X_Goto_Page.cs" />
     <Compile Include="Management\Pages\X_Show_Page.cs" />
+    <Compile Include="Management\Nodes\CxNode.cs" />
     <Compile Include="Management\Service\Service.cs" />
     <Compile Include="Management\Service\X_About_Program_Form.cs" />
     <Compile Include="Management\Service\X_Add_Form.cs" />

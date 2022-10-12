@@ -25,8 +25,16 @@ namespace TvWinForms
 
     bool ShowPage(RadPageViewPage page, bool visible)
     {
-      page.Item.Visibility = visible ? Telerik.WinControls.ElementVisibility.Visible : Telerik.WinControls.ElementVisibility.Collapsed;
-      return true;
+      bool result = false;
+
+      if ((page != null) && (page.Tag != null) && (page.Tag is SubForm))
+      {
+        SubForm subForm = page.Tag as SubForm;
+        if ((subForm != null) && (subForm.NodeForm != null) && (subForm.NodeForm.Visible != visible)) subForm.NodeForm.Visible = visible;
+        result = true;
+      }
+
+      return result;
     }
   }
 }

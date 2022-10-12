@@ -22,12 +22,12 @@ namespace TvWinForms
       SetIconDefaultValuesIfTheyHaveNoAnyValue();
 
       MainForm.Icon = IconApplication;
-      MainForm.NotifyIconMainForm.Icon = IconSystemTray;  
- 
+      MainForm.NotifyIconMainForm.Icon = IconSystemTray;
+
       #endregion ----------------------------------------------------------------------------------------------------------------
 
 
-
+      MainForm.Text = FrameworkSettings.MainFormCaption;
 
       MainForm.Visible = false;
 
@@ -39,7 +39,7 @@ namespace TvWinForms
 
       Pages.Configure(MainForm);
 
-      MainForm.Text = string.Empty; // TODO: Form caption //
+      MainForm.Text = FrameworkSettings.MainFormCaption;
 
       MainForm.SetProperties();
 

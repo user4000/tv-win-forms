@@ -66,9 +66,9 @@ namespace TvWinFormsExample
 
     static void SetUserForms()
     {
-      Group grUsers = GroupManager.Create("users", "Work with users", "01");
-      Group grContracts = GroupManager.Create("contracts", "Contracts and Consignments", "02");
-      Group grWarehouse = GroupManager.Create("movement", "Item movement", "03");
+      Group grUsers = GroupManager.Create("users", "Work with users", "01", true, true);
+      Group grContracts = GroupManager.Create("contracts", "Contracts and Consignments", "02", true, true);
+      Group grWarehouse = GroupManager.Create("movement", "Item movement", "03", true, true);
     
 
       ushort f1 = Service.AddForm<FxForm1>(grUsers, "form1", "My Form 1", true, true);
@@ -85,7 +85,7 @@ namespace TvWinFormsExample
 
       ushort aboutProgram = Service.AddForm<FxAboutProgram>(GroupManager.GroupStandardAboutProgram, "formAboutProgram", "About my super program", true, true);
 
-      Service.SetStartForm("form8"); // or Service.SetStartForm(f3);
+      //Service.SetStartForm("form8"); // or Service.SetStartForm(f3);
     }
 
     static void SetApplicationEvents()

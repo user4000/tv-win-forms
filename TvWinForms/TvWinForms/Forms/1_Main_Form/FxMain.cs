@@ -26,7 +26,7 @@ namespace TvWinForms
         this.Opacity = 0;
       }
 
-      this.MinimumSize = new Size(800, 600);
+      this.MinimumSize = new Size(800, 400);
 
       AdjustFirstPage();
 
@@ -45,7 +45,7 @@ namespace TvWinForms
       SplitterMainVertical.BringToFront();
       PvMain.BringToFront();
       PnTreeview.PanelElement.PanelBorder.Visibility = ElementVisibility.Collapsed;
-      TvMain.LineColor = Color.LightGray;
+      TvMain.LineColor = Color.FromArgb(180, 180, 180);
       TvMain.LineStyle = TreeLineStyle.Dot;
       //TvMain.Padding = new Padding(10, 5, 5, 5);
     }

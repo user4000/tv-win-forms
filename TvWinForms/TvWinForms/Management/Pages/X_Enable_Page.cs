@@ -25,7 +25,16 @@ namespace TvWinForms
 
     bool Enable(RadPageViewPage page, bool enable)
     {
-      if (page.Item.Enabled != enable) page.Item.Enabled = enable; return true;
+      bool result = false;
+
+      if ((page != null) && (page.Tag != null) && (page.Tag is SubForm))
+      {
+        SubForm subForm = page.Tag as SubForm;
+        if ((subForm != null) && (subForm.NodeForm != null) && (subForm.NodeForm.Enabled != enable)) subForm.NodeForm.Enabled = enable;
+        result = true;
+      }
+
+      return result;
     }
   }
 }

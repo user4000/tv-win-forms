@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Telerik.WinControls.UI;
 using System.Collections.Generic;
 
@@ -51,7 +52,7 @@ namespace TvWinForms
     public bool StandardFrameworkGroup(Group group) => StandardFrameworkGroup(group.Code);
 
 
-    public Group Create(string code, string text, string rank)
+    public Group Create(string code, string text, string rank, bool expandOnSelect = false, bool collapseOnExit = false)
     {
       if (GroupCodes.Contains(code))
       {
@@ -77,7 +78,7 @@ namespace TvWinForms
         rank = "a_" + rank;
       }
 
-      Group group = Group.Create(code, text, rank);
+      Group group = Group.Create(code, text, rank, expandOnSelect, collapseOnExit);
 
       Groups.Add(group);
   
@@ -86,23 +87,24 @@ namespace TvWinForms
       return group;
     }
 
-    void AddFrameworkStandardGroups()
+    void AddFrameworkStandardGroups() // NOTE: Creating standard groups //
     {
       GroupStandardCodes.Add(CodeStandardGroupAboutProgram);
       GroupStandardCodes.Add(CodeStandardGroupMessagesAndSettings);
       GroupStandardCodes.Add(CodeStandardGroupExitFromTheApplication);
 
-      GroupStandardMessagesAndSettings = this.Create(CodeStandardGroupMessagesAndSettings, "Messages and Settings", "z01");
-      GroupStandardAboutProgram = this.Create(CodeStandardGroupAboutProgram, "About Program", "z02");
-      GroupStandardExit = this.Create(CodeStandardGroupExitFromTheApplication, "Exit", "z03");
+      GroupStandardMessagesAndSettings = this.Create(CodeStandardGroupMessagesAndSettings, "Messages and Settings", "z01", true);
+      GroupStandardAboutProgram = this.Create(CodeStandardGroupAboutProgram, "About Program", "z02", true, true);
+      GroupStandardExit = this.Create(CodeStandardGroupExitFromTheApplication, "Exit", "z03", true, true);
     }
 
-    RadTreeNode CreateGroupNode(Group group) // Это элемент, который в себе будет содержать другие элементы //
+    CxNode CreateGroupNode(Group group) // NOTE: Create GROUP node // 
     {
-      RadTreeNode node = new RadTreeNode();
+      CxNode node = new CxNode();
       node.Text = "   " + group.Text;
-      node.Tag = group.Code;
-      node.Value = group.Code;
+      //node.Tag = group.Code;
+      //node.Value = group.Code;
+      node.SetGroup(group);
       node.Font = FrameworkManager.MainForm.TvMain.Font;
       return node;
     }
@@ -115,6 +117,41 @@ namespace TvWinForms
       {        
         FrameworkManager.MainForm.TvMain.Nodes.Add(CreateGroupNode(group));
       }
+    }
+
+    public bool IsGroupNode(RadTreeNode node) // Можно также использовать свойство Level //
+    {
+      // return (node.Tag != null) && (node.Tag is string) && (string.IsNullOrWhiteSpace((string)node.Tag) == false);
+      return (node.Level == 0);
+    }
+
+    public Group GetGroup(string groupCode)
+    {
+      return Groups.FirstOrDefault(group => group.Code == groupCode);
+    }
+
+    public Group GetGroup(RadTreeNode node)
+    {
+      Group group = null;
+
+      if (node is CxNode) group = (node as CxNode).MyGroup;
+
+      /*
+      if (IsGroupNode(node) == false) return group;
+      string code = (string)(node.Tag);
+      group = GetGroup(code);
+      */
+
+      return group;
+    }
+
+    internal RadTreeNode GetParent(RadTreeNode node)
+    {
+      RadTreeNode parent = null;
+      if (node == null) return parent;
+      if (node.Level == 0) return node;
+      parent = node.Parent;
+      return parent;
     }
   }
 }

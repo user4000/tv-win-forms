@@ -25,15 +25,18 @@ namespace TvWinForms
 
     bool GotoPage(RadPageViewPage page)
     {
-      bool result = true;
-      try
+      bool result = false;
+
+      if ((page != null) && (page.Tag != null) && (page.Tag is SubForm))
       {
-        MainForm.PvMain.SelectedPage = page;
+        SubForm subForm = page.Tag as SubForm;
+        if ((subForm != null) && (subForm.NodeForm != null))
+        {
+          MainForm.TvMain.SelectedNode = subForm.NodeForm;
+          result = true;
+        }
       }
-      catch
-      {
-        result = false;
-      }
+
       return result;
     }
   }
