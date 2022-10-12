@@ -1,5 +1,6 @@
 ﻿using System;
 using Telerik.WinControls.UI;
+using TvWinForms.Extensions;
 
 namespace TvWinForms
 {
@@ -23,6 +24,7 @@ namespace TvWinForms
       // Установим новое событие - "Пользователь ходит по элементам древовидного списка" //
       MainForm.TvMain.SelectedNodeChanged += new RadTreeView.RadTreeViewEventHandler(EventSelectedNodeChanged);
 
+      MainForm.PnTreeview.Resize += new EventHandler(EventPanelTreeviewResize);
 
 
       bool startForm = Service.GotoStartForm();

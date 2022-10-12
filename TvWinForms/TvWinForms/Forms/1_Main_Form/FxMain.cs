@@ -3,6 +3,7 @@ using System.Drawing;
 using Telerik.WinControls;
 using System.Windows.Forms;
 using Telerik.WinControls.UI;
+using TvWinForms.Extensions;
 using static TvWinForms.FrameworkManager;
 
 namespace TvWinForms
@@ -44,7 +45,8 @@ namespace TvWinForms
       PvMain.Dock = DockStyle.Fill;
       SplitterMainVertical.BringToFront();
       PvMain.BringToFront();
-      PnTreeview.PanelElement.PanelBorder.Visibility = ElementVisibility.Collapsed;
+      PnTreeview.ShowBorder(false);
+      //PnTreeview.PanelElement.PanelBorder.Visibility = ElementVisibility.Collapsed;
       TvMain.LineColor = Color.FromArgb(180, 180, 180);
       TvMain.LineStyle = TreeLineStyle.Dot;
       //TvMain.Padding = new Padding(10, 5, 5, 5);

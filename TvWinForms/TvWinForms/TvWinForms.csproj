@@ -113,6 +113,7 @@
     <Compile Include="Management\Main\K_Main_Form_Shown.cs" />
     <Compile Include="Management\Main\K_Setting_SubFolder.cs" />
     <Compile Include="Management\Main\K_Treeview_Node_Changed.cs" />
+    <Compile Include="Management\Main\K_Treeview_Resize.cs" />
     <Compile Include="Management\Nodes\CxGroupManager.cs" />
     <Compile Include="Management\Nodes\Group.cs" />
     <Compile Include="Management\Pages\PagesManager.cs" />
@@ -152,6 +153,7 @@
     <Compile Include="Standard\Extensions\XxDataTable.cs" />
     <Compile Include="Standard\Extensions\XxGridViewDataColumn.cs" />
     <Compile Include="Standard\Extensions\XxRadGridView.cs" />
+    <Compile Include="Standard\Extensions\XxRadPanel.cs" />
     <Compile Include="Standard\Extensions\XxString.cs" />
     <Compile Include="Standard\Grid\GridManager.cs" />
     <Compile Include="Standard\Grid\GridWithDataTable.cs" />

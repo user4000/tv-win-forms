@@ -10,15 +10,15 @@ namespace TvWinForms.Extensions
     {// Получим значение ячейки в указанном столбце текущей строки //
       string s = string.Empty;
       if (grid.SelectedRows.Count > 0)
-      try
-      {
-        GridViewRowInfo row = grid.SelectedRows[0];
-        s = row.Cells[GridColumnName].Value.ToString() ?? string.Empty;
-      }
-      catch 
-      {
-         // TvWinForms.Logger.Manager.Log.Save(ex, "ZzGetStringValue");
-      }
+        try
+        {
+          GridViewRowInfo row = grid.SelectedRows[0];
+          s = row.Cells[GridColumnName].Value.ToString() ?? string.Empty;
+        }
+        catch
+        {
+          // TvWinForms.Logger.Manager.Log.Save(ex, "ZzGetStringValue");
+        }
       return s;
     }
 
