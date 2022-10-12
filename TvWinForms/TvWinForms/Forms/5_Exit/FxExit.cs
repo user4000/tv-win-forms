@@ -5,7 +5,7 @@ using static TvWinForms.FrameworkManager;
 
 namespace TvWinForms.Form
 {
-  public partial class FxExit : RadForm, IStartWork, IUserVisitedTheForm
+  public partial class FxExit : RadForm, IStartWork, IUserVisitedTheFormAsync
   {
     public FxExit()
     {
@@ -19,19 +19,20 @@ namespace TvWinForms.Form
       BtnExit.Click += new EventHandler(EventUserClickedExitButton);
     }
 
-    void UserWantsToExit()
+    async Task UserWantsToExit()
     {
       FrameworkManager.UserHasClickedExitButton = true;
       FrameworkManager.Events.UserClickedExitButton?.Invoke();
+      await Task.Delay(350);
       MainForm.Close();
     }
 
-    void EventUserClickedExitButton(object sender, EventArgs e)
+    async void EventUserClickedExitButton(object sender, EventArgs e)
     {
-      UserWantsToExit();
+      await UserWantsToExit();
     }
 
-    public void EventUserVisitedTheForm()
+    public async Task EventUserVisitedTheFormAsync()
     {
       bool Confirmation = FrameworkSettings.ConfirmExit;
 
@@ -44,7 +45,7 @@ namespace TvWinForms.Form
       }
       else
       {
-        UserWantsToExit();
+        await UserWantsToExit();
       }
     }
 

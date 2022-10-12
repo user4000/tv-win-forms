@@ -101,11 +101,16 @@ namespace TvWinForms
     CxNode CreateGroupNode(Group group) // NOTE: Create GROUP node // 
     {
       CxNode node = new CxNode();
-      node.Text = "   " + group.Text;
-      //node.Tag = group.Code;
-      //node.Value = group.Code;
+      node.Text = "  " + group.Text;
       node.SetGroup(group);
       node.Font = FrameworkManager.MainForm.TvMain.Font;
+      node.Image = FrameworkManager.MainForm.PicGroupNode.Image;
+
+      if (group.Code == this.CodeStandardGroupExitFromTheApplication) node.Image = FrameworkManager.MainForm.PicGroupExit.Image;
+      if (group.Code == this.CodeStandardGroupMessagesAndSettings) node.Image = FrameworkManager.MainForm.PicGroupMessagesAndSettings.Image;
+
+      node.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+
       return node;
     }
 
@@ -133,15 +138,7 @@ namespace TvWinForms
     public Group GetGroup(RadTreeNode node)
     {
       Group group = null;
-
       if (node is CxNode) group = (node as CxNode).MyGroup;
-
-      /*
-      if (IsGroupNode(node) == false) return group;
-      string code = (string)(node.Tag);
-      group = GetGroup(code);
-      */
-
       return group;
     }
 

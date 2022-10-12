@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
       this.components = new System.ComponentModel.Container();
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FxMain));
       this.MainFormMenu = new Telerik.WinControls.UI.RadMenu();
       this.MenuItemFirstItem = new Telerik.WinControls.UI.RadMenuItem();
       this.PnMainTop = new Telerik.WinControls.UI.RadPanel();
@@ -40,6 +41,14 @@
       this.PageSettings = new Telerik.WinControls.UI.RadPageViewPage();
       this.PageAboutProgram = new Telerik.WinControls.UI.RadPageViewPage();
       this.PageExit = new Telerik.WinControls.UI.RadPageViewPage();
+      this.PageImages = new Telerik.WinControls.UI.RadPageViewPage();
+      this.PicExit = new System.Windows.Forms.PictureBox();
+      this.PicGroupMessagesAndSettings = new System.Windows.Forms.PictureBox();
+      this.PicGroupExit = new System.Windows.Forms.PictureBox();
+      this.PicSettings = new System.Windows.Forms.PictureBox();
+      this.PicLog = new System.Windows.Forms.PictureBox();
+      this.PicUserForm = new System.Windows.Forms.PictureBox();
+      this.PicGroupNode = new System.Windows.Forms.PictureBox();
       this.NotifyIconMainForm = new System.Windows.Forms.NotifyIcon(this.components);
       this.TvMain = new Telerik.WinControls.UI.RadTreeView();
       this.PnTreeview = new Telerik.WinControls.UI.RadPanel();
@@ -47,6 +56,14 @@
       ((System.ComponentModel.ISupportInitialize)(this.PnMainTop)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.PvMain)).BeginInit();
       this.PvMain.SuspendLayout();
+      this.PageImages.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.PicExit)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.PicGroupMessagesAndSettings)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.PicGroupExit)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.PicSettings)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.PicLog)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.PicUserForm)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.PicGroupNode)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.TvMain)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.PnTreeview)).BeginInit();
       this.PnTreeview.SuspendLayout();
@@ -107,10 +124,11 @@
       this.PvMain.Controls.Add(this.PageSettings);
       this.PvMain.Controls.Add(this.PageAboutProgram);
       this.PvMain.Controls.Add(this.PageExit);
+      this.PvMain.Controls.Add(this.PageImages);
       this.PvMain.Font = new System.Drawing.Font("Verdana", 10F);
       this.PvMain.Location = new System.Drawing.Point(377, 100);
       this.PvMain.Name = "PvMain";
-      this.PvMain.SelectedPage = this.PageEmpty;
+      this.PvMain.SelectedPage = this.PageImages;
       this.PvMain.Size = new System.Drawing.Size(758, 627);
       this.PvMain.TabIndex = 6;
       ((Telerik.WinControls.UI.RadPageViewStripElement)(this.PvMain.GetChildAt(0))).StripButtons = Telerik.WinControls.UI.StripViewButtons.Scroll;
@@ -156,6 +174,91 @@
       this.PageExit.Name = "PageExit";
       this.PageExit.Size = new System.Drawing.Size(746, 586);
       this.PageExit.Text = "Exit";
+      // 
+      // PageImages
+      // 
+      this.PageImages.Controls.Add(this.PicExit);
+      this.PageImages.Controls.Add(this.PicGroupMessagesAndSettings);
+      this.PageImages.Controls.Add(this.PicGroupExit);
+      this.PageImages.Controls.Add(this.PicSettings);
+      this.PageImages.Controls.Add(this.PicLog);
+      this.PageImages.Controls.Add(this.PicUserForm);
+      this.PageImages.Controls.Add(this.PicGroupNode);
+      this.PageImages.ItemSize = new System.Drawing.SizeF(68F, 30F);
+      this.PageImages.Location = new System.Drawing.Point(6, 35);
+      this.PageImages.Name = "PageImages";
+      this.PageImages.Size = new System.Drawing.Size(746, 586);
+      this.PageImages.Text = "Images";
+      // 
+      // PicExit
+      // 
+      this.PicExit.Image = ((System.Drawing.Image)(resources.GetObject("PicExit.Image")));
+      this.PicExit.Location = new System.Drawing.Point(111, 122);
+      this.PicExit.Name = "PicExit";
+      this.PicExit.Size = new System.Drawing.Size(50, 50);
+      this.PicExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+      this.PicExit.TabIndex = 1;
+      this.PicExit.TabStop = false;
+      // 
+      // PicGroupMessagesAndSettings
+      // 
+      this.PicGroupMessagesAndSettings.Image = ((System.Drawing.Image)(resources.GetObject("PicGroupMessagesAndSettings.Image")));
+      this.PicGroupMessagesAndSettings.Location = new System.Drawing.Point(32, 191);
+      this.PicGroupMessagesAndSettings.Name = "PicGroupMessagesAndSettings";
+      this.PicGroupMessagesAndSettings.Size = new System.Drawing.Size(50, 50);
+      this.PicGroupMessagesAndSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+      this.PicGroupMessagesAndSettings.TabIndex = 1;
+      this.PicGroupMessagesAndSettings.TabStop = false;
+      // 
+      // PicGroupExit
+      // 
+      this.PicGroupExit.Image = ((System.Drawing.Image)(resources.GetObject("PicGroupExit.Image")));
+      this.PicGroupExit.Location = new System.Drawing.Point(32, 122);
+      this.PicGroupExit.Name = "PicGroupExit";
+      this.PicGroupExit.Size = new System.Drawing.Size(50, 50);
+      this.PicGroupExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+      this.PicGroupExit.TabIndex = 1;
+      this.PicGroupExit.TabStop = false;
+      // 
+      // PicSettings
+      // 
+      this.PicSettings.Image = ((System.Drawing.Image)(resources.GetObject("PicSettings.Image")));
+      this.PicSettings.Location = new System.Drawing.Point(191, 191);
+      this.PicSettings.Name = "PicSettings";
+      this.PicSettings.Size = new System.Drawing.Size(50, 50);
+      this.PicSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+      this.PicSettings.TabIndex = 0;
+      this.PicSettings.TabStop = false;
+      // 
+      // PicLog
+      // 
+      this.PicLog.Image = ((System.Drawing.Image)(resources.GetObject("PicLog.Image")));
+      this.PicLog.Location = new System.Drawing.Point(111, 191);
+      this.PicLog.Name = "PicLog";
+      this.PicLog.Size = new System.Drawing.Size(50, 50);
+      this.PicLog.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+      this.PicLog.TabIndex = 0;
+      this.PicLog.TabStop = false;
+      // 
+      // PicUserForm
+      // 
+      this.PicUserForm.Image = ((System.Drawing.Image)(resources.GetObject("PicUserForm.Image")));
+      this.PicUserForm.Location = new System.Drawing.Point(111, 50);
+      this.PicUserForm.Name = "PicUserForm";
+      this.PicUserForm.Size = new System.Drawing.Size(50, 50);
+      this.PicUserForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+      this.PicUserForm.TabIndex = 0;
+      this.PicUserForm.TabStop = false;
+      // 
+      // PicGroupNode
+      // 
+      this.PicGroupNode.Image = ((System.Drawing.Image)(resources.GetObject("PicGroupNode.Image")));
+      this.PicGroupNode.Location = new System.Drawing.Point(32, 50);
+      this.PicGroupNode.Name = "PicGroupNode";
+      this.PicGroupNode.Size = new System.Drawing.Size(50, 50);
+      this.PicGroupNode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+      this.PicGroupNode.TabIndex = 0;
+      this.PicGroupNode.TabStop = false;
       // 
       // NotifyIconMainForm
       // 
@@ -213,6 +316,14 @@
       ((System.ComponentModel.ISupportInitialize)(this.PnMainTop)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.PvMain)).EndInit();
       this.PvMain.ResumeLayout(false);
+      this.PageImages.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.PicExit)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.PicGroupMessagesAndSettings)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.PicGroupExit)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.PicSettings)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.PicLog)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.PicUserForm)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.PicGroupNode)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.TvMain)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.PnTreeview)).EndInit();
       this.PnTreeview.ResumeLayout(false);
@@ -238,5 +349,13 @@
     public System.Windows.Forms.NotifyIcon NotifyIconMainForm;
     public Telerik.WinControls.UI.RadTreeView TvMain;
     public Telerik.WinControls.UI.RadPanel PnTreeview;
+    private Telerik.WinControls.UI.RadPageViewPage PageImages;
+    public System.Windows.Forms.PictureBox PicExit;
+    public System.Windows.Forms.PictureBox PicGroupExit;
+    public System.Windows.Forms.PictureBox PicUserForm;
+    public System.Windows.Forms.PictureBox PicGroupNode;
+    public System.Windows.Forms.PictureBox PicGroupMessagesAndSettings;
+    public System.Windows.Forms.PictureBox PicSettings;
+    public System.Windows.Forms.PictureBox PicLog;
   }
 }

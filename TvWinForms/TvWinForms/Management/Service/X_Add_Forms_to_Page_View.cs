@@ -1,4 +1,5 @@
 ﻿using System;
+using TvWinForms.Form;
 using System.Diagnostics;
 using Telerik.WinControls;
 using System.Windows.Forms;
@@ -54,12 +55,6 @@ namespace TvWinForms
 
       page.Tag = subForm;
      
-      //page.Item.MinSize = new Size(FrameworkSettings.TabMinimumWidth, 0);
-
-      //page.Item.Visibility = subForm.FlagNodeVisible ? ElementVisibility.Visible : ElementVisibility.Collapsed;
-
-      //page.Item.Enabled = subForm.FlagNodeEnabled;
-
       CreateTreeNode(subForm);
     }
 
@@ -78,11 +73,8 @@ namespace TvWinForms
     {
       string codeOfGroup = subForm.FormGroup.Code;
 
-      //RadTreeNode[] nodesFound = MainForm.TvMain.FindNodes(oneNode => (FrameworkManager.GroupManager.ThisIsGroupNode(oneNode)) && ((string)oneNode.Tag == codeOfGroup));
-
       // Now we have to find an existing group node for the user form //
       RadTreeNode[] nodesFound = MainForm.TvMain.FindNodes(oneNode => (FrameworkManager.GroupManager.IsGroupNode(oneNode)) && (((CxNode)oneNode).MyGroup.Code == codeOfGroup));
-
 
       if (nodesFound.Length != 1)
       {
@@ -94,7 +86,7 @@ namespace TvWinForms
 
       CxNode node = new CxNode()
       {
-        Text = subForm.PageText,
+        Text = "  " + subForm.PageText,
         Font = FrameworkManager.MainForm.TvMain.Font,
       };
 
@@ -107,7 +99,13 @@ namespace TvWinForms
 
       node.SetForm(subForm);
       node.SetGroup(group);
+      node.Image = MainForm.PicUserForm.Image;
 
+      if (subForm.Form is FxLog) node.Image = MainForm.PicLog.Image;
+      if (subForm.Form is FxExit) node.Image = MainForm.PicExit.Image;
+      if (subForm.Form is FxSettings) node.Image = MainForm.PicSettings.Image;
+
+      node.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
 
       bool expandGroup = false;
 

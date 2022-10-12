@@ -1,4 +1,5 @@
 ﻿using System;
+using TvWinForms.Form;
 using System.Diagnostics;
 using Telerik.WinControls.UI;
 
@@ -34,6 +35,8 @@ namespace TvWinForms
         return;
       }
 
+      if (MainForm.TvMain.HotTracking) MainForm.TvMain.HotTracking = false;
+
       SubForm subForm = Service.GetSubForm(e.Node); // Попробуем узнать, какая форма соответствует данному элементу //
 
       if (subForm == null)
@@ -64,7 +67,9 @@ namespace TvWinForms
       Group group = GroupManager.GetGroup(code);
       if (group == null) return;
 
-      if ( ( (group.ExpandOnSelect) || (FrameworkSettings.TreeviewNavigationAlwaysExpandOnSelect) ) && (!node.Expanded)) node.Expand();
+      MainForm.TvMain.HotTracking = (group.Code == GroupManager.CodeStandardGroupExitFromTheApplication);
+
+      if (((group.ExpandOnSelect) || (FrameworkSettings.TreeviewNavigationAlwaysExpandOnSelect)) && (!node.Expanded)) node.Expand();
     }
 
     static void EventUserLeftNode(RadTreeNode nodePrevious, RadTreeNode nodeCurrent) // Событие: Пользователь покинул элемент Treeview //
@@ -81,9 +86,16 @@ namespace TvWinForms
 
 
       if (groupPrevious.Code == GroupManager.CodeStandardGroupExitFromTheApplication)
-      {
-        parentPrevious.Collapse();
-        return;
+      {      
+        if ((nodeCurrent is CxNode) && (((nodeCurrent as CxNode)?.MySubForm?.Form is FxExit)))
+        {
+          return; // Пользователь нажал на элемент "Выход" //
+        }
+        else
+        {
+          parentPrevious.Collapse(); // Сворачиваем группу "Выход" только в том случае, если не был выбран пункт "Выход" //
+          return;
+        }
       }
 
 

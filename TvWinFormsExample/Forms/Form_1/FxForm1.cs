@@ -41,7 +41,7 @@ namespace TvWinFormsExample
     {
       BxTest2.Enabled = false;
 
-      Pages.EnablePage<FxForm8>(false);
+      Pages.GotoPage<FxForm8>();
 
       await Task.Delay(1000);
       BxTest2.Enabled = true;
@@ -51,7 +51,7 @@ namespace TvWinFormsExample
     {
       BxTest3.Enabled = false;
 
-      Pages.EnablePage<FxForm8>(false);
+      Pages.GotoPage<FxForm4>();
 
       await Task.Delay(1000);
       BxTest3.Enabled = true;
