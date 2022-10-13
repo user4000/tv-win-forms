@@ -27,7 +27,7 @@ namespace TvWinForms
     public TmAlertService AlertService { get; private set; } = null;
 
 
-    private ushort IdForm { get; set; } = 1;
+    private ushort IdForm { get; set; } = 1; // Начальное значение обязательно должно быть больше нуля //
 
 
     FrameworkService()

@@ -12,9 +12,7 @@ namespace TvWinForms
 
       FrameworkSettings.StartTimerIntervalMilliseconds = settings.StartTimerIntervalMilliseconds;
 
-      FrameworkSettings.StripOrientation = settings.StripOrientation;
-
-      FrameworkSettings.TimeCheckOldLogFiles = settings.TimeCheckOldLogFiles;
+       FrameworkSettings.TimeCheckOldLogFiles = settings.TimeCheckOldLogFiles;
 
       FrameworkSettings.FlagMinimizeMainFormBeforeClosing = settings.FlagMinimizeMainFormBeforeClosing;
 
@@ -26,15 +24,11 @@ namespace TvWinForms
 
       FrameworkSettings.VisualEffectOnExit = settings.VisualEffectOnExit;
 
-      FrameworkSettings.TabMinimumWidth = settings.TabMinimumWidth;
-
       FrameworkSettings.PageViewFont = settings.PageViewFont;
 
       FrameworkSettings.FontAlertCaption = settings.FontAlertCaption;
 
       FrameworkSettings.FontAlertText = settings.FontAlertText;
-
-      FrameworkSettings.PageViewItemSpacing = settings.PageViewItemSpacing;
 
       FrameworkSettings.MaxAlertCount = settings.MaxAlertCount;
 

@@ -70,28 +70,5 @@ namespace TvWinForms
           propertyGridPadding = value;
       }
     }
-
-
-
-
-
-
-    private Size pageViewItemSize = new Size(100, 27);
-
-    public Size PageViewItemSize
-    {
-      get => pageViewItemSize;
-      set
-      {
-        bool CheckIsNull = MainForm?.PvMain?.ItemSize == null ? true : false;
-        bool ValueIsOK = ((value.Height >= 10) && (value.Width >= 10));
-
-        if (ValueIsOK)
-        {
-          pageViewItemSize = value;
-          if (CheckIsNull == false) MainForm.PvMain.ItemSize = pageViewItemSize;
-        }
-      }
-    }
   }
 }

@@ -9,7 +9,6 @@ namespace TvWinForms
   {
     static void GotoEmptyPage() => MainForm.PvMain.SelectedPage = MainForm.PageEmpty;
 
-
     public static RadTreeNode CurrentNode { get; private set; }
 
     public static RadTreeNode PreviousNode { get; private set; }
@@ -98,15 +97,12 @@ namespace TvWinForms
         }
       }
 
-
       string codeOfCurrentGroup = groupCurrent == null ? string.Empty : groupCurrent.Code;
-
 
       bool collapse1 = groupPrevious.CollapseOnExit || FrameworkSettings.TreeviewNavigationAlwaysCollapseOnExit;
       bool collapse2 = (parentPrevious.Expanded) && (groupPrevious.Code != codeOfCurrentGroup);
       bool collapse3 = !((groupPrevious.Code == GroupManager.CodeStandardGroupMessagesAndSettings) && (groupPrevious.CollapseOnExit == false));
       bool collapse4 = !(FrameworkSettings.TreeviewNavigationPreventCollapseOnExit);
-
 
       if (collapse1 && collapse2 && collapse3 && collapse4) parentPrevious.Collapse();
     }

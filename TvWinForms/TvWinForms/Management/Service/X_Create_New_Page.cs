@@ -27,9 +27,7 @@ namespace TvWinForms
           Text = form.PageText
         };
       }
-
-      
-
+   
       if (page.Item != null) page.Item.Visibility = ElementVisibility.Collapsed;
 
       MainForm.PvMain.Pages.Add(page); 

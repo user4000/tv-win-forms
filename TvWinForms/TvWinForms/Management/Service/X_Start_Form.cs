@@ -20,7 +20,7 @@ namespace TvWinForms
     public void SetStartForm(ushort id)
     {
       IdStartForm = id;
-      if (FormExists(id) == false)
+      if (FormIsInTheQueue(id) == false)
       {
         Trace.WriteLine($"[TvWinForms] framework: Warning! There is no form with id = {id}");
       }
@@ -32,7 +32,7 @@ namespace TvWinForms
     public void SetStartForm(string UniqueFormName)
     {
       CodeStartForm = UniqueFormName;
-      if (FormExists(UniqueFormName) == false)
+      if (FormIsInTheQueue(UniqueFormName) == false)
       {
         Trace.WriteLine($"[TvWinForms] framework: Warning! There is no form with unique form name = {UniqueFormName}");
       }

@@ -5,7 +5,7 @@ namespace TvWinForms
 {
   public partial class FrameworkService
   {
-    bool FormExists(ushort id)
+    bool FormIsInTheQueue(ushort id)
     {
       bool result = false;
       foreach (var item in QueueForms)
@@ -19,12 +19,12 @@ namespace TvWinForms
       return result;
     }
 
-    bool FormExists(string UniqueFormName)
+    bool FormIsInTheQueue(string uniqueFormName)
     {
       bool result = false;
       foreach (var item in QueueForms)
       {
-        if (item.UniqueName == UniqueFormName)
+        if (item.UniqueName == uniqueFormName)
         {
           result = true;
           break;

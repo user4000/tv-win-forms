@@ -64,8 +64,6 @@ namespace TvWinForms
 
       if (node is CxNode) result = (node as CxNode).MySubForm;
 
-      // if ((node.Value != null) && (node.Value is SubForm)) result = (SubForm)(node.Value);
-
       return result;
     }
 

@@ -1,6 +1,5 @@
 ﻿using System;
 using Telerik.WinControls.UI;
-using TvWinForms.Extensions;
 
 namespace TvWinForms
 {
@@ -25,6 +24,11 @@ namespace TvWinForms
       if ((show) && (NodesWereHidden == false)) return;
       NodesWereHidden = !show;
       foreach (RadTreeNode node in MainForm.TvMain.Nodes) node.Visible = show;
+    }
+
+    static void EventUserClickedOnTreeview(object sender, EventArgs e)
+    {
+      if (MainForm.TvMain.Width < 150) MainForm.PnTreeview.Width = 250;
     }
   }
 }

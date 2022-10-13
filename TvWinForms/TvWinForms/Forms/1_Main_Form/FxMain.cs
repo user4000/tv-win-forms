@@ -13,7 +13,6 @@ namespace TvWinForms
     System.Windows.Forms.Timer TmStartMainApplication { get; set; } = new System.Windows.Forms.Timer();
 
     public bool FlagSizeIsBeingChanged { get; private set; } = false;
-
   
     public FxMain()
     {
@@ -86,7 +85,6 @@ namespace TvWinForms
       page.ItemSize = new SizeF(130F, 30);
       page.Location = new Point(10, 10);
       page.TextAlignment = ContentAlignment.MiddleCenter;
-      page.Item.MinSize = new Size(FrameworkSettings.TabMinimumWidth, 0);
       page.Item.Visibility = ElementVisibility.Collapsed;
     }
 
@@ -96,7 +94,6 @@ namespace TvWinForms
       page.ItemSize = new SizeF(130F, 30);
       page.Location = new Point(10, 10);
       page.TextAlignment = ContentAlignment.MiddleCenter;
-      page.Item.MinSize = new Size(FrameworkSettings.TabMinimumWidth, 0);
       page.Item.Visibility = ElementVisibility.Collapsed;
     }
 

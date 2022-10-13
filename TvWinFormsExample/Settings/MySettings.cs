@@ -101,19 +101,20 @@ namespace TvWinFormsExample
     [RadSortOrder(6)]
     public MyEnum my_enum { get; set; } = MyEnum.e_Three;
 
-    [Category("Application view")]
-    public StripViewAlignment MainPageOrientation { get; set; } = StripViewAlignment.Top;
-
 
     public override void PropertyValueChanged(string PropertyName)
     {
       //Manager.EventPropertyValueChanged(PropertyName);
       //ms.Message(MessageType.msg_info, property_name, "Changed!", 4,MessagePosition.pos_SC); 
       //Log.Save(MsgType.Debug, "public override void PropertyValueChanged(string PropertyName)", PropertyName);
+      
+      
+      /*
       if (PropertyName == nameof(MainPageOrientation))
       {
         FrameworkManager.Service.SetPageViewOrientation(MainPageOrientation);
       }
+      */
     }
 
     public override void EventBeforeSaving()

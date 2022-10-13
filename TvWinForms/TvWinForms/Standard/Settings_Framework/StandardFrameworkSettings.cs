@@ -17,40 +17,13 @@ namespace TvWinForms
 
 
 
-
-
-    private int tabMinWidth = 100;
-
-    /// <summary>
-    /// The property is stored in the file.
-    /// </summary>
-
-    [JsonProperty(Order = 1)]
-    public int TabMinimumWidth // Минимальная ширина вкладки //
-    {
-      get => tabMinWidth;
-      set
-      {
-        bool ValueIsOk = ((value >= 30) && (value <= 500));
-        if (ValueIsOk)
-          tabMinWidth = value;
-        else
-          tabMinWidth = 100;
-      }
-    }
-
-
-
-
-
-
     private Font pageViewFont = new Font("Verdana", 9, FontStyle.Regular);
 
     /// <summary>
     /// The property is stored in the file.
     /// </summary>
 
-    [JsonProperty(Order = 2)]
+    [JsonProperty(Order = 1)]
     public Font PageViewFont
     {
       get => pageViewFont;
@@ -66,29 +39,6 @@ namespace TvWinForms
         }
       }
     }
-
-
-
-    /// <summary>
-    /// The property is stored in the file.
-    /// </summary>
-
-    [JsonProperty(Order = 10)]
-    public StripViewAlignment StripOrientation { get; set; } = StripViewAlignment.Top;
-
-
-
-
-    public PageViewItemSizeMode ItemSizeMode { get; set; } = PageViewItemSizeMode.EqualHeight; //PageViewItemSizeMode.Individual ;
-
-
-
-    /// <summary>
-    /// The property is stored in the file.
-    /// </summary>
-
-    [JsonProperty(Order = 15)]
-    public int PageViewItemSpacing { get; set; } = 10;
 
 
 
