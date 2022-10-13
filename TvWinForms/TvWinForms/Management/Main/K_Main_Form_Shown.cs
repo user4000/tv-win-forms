@@ -6,7 +6,7 @@ namespace TvWinForms
 {
   partial class FrameworkManager
   {
-    static void EventMainFormShown(object sender, EventArgs e)
+    static async void EventMainFormShown(object sender, EventArgs e)
     {
       MainForm.Shown -= new EventHandler(EventMainFormShown);
 
@@ -33,15 +33,19 @@ namespace TvWinForms
 
 
 
-
       MainForm.ShowMainPageView(true);
-
 
 
 
       Events.MainFormShown?.Invoke();
 
       Events.Start?.Invoke();
+
+      if (Events.StartAsync != null)
+      {
+        await Events.StartAsync();
+      }
+
 
       MainForm.LaunchStartTimer();
 

@@ -75,6 +75,13 @@ namespace TvWinForms
     /// <summary>
     /// Order of execution 6
     /// </summary>
+    public Func<Task> StartAsync { get; set; }
+
+
+
+    /// <summary>
+    /// Order of execution 7
+    /// </summary>
     public Action StartByTimer { get; set; }
 
 

@@ -38,6 +38,8 @@ namespace TvWinFormsExample
 
       /* Настройки фреймворка, которые не сохраняются в текстовом файле и требуют явного указания значений (если не устраивают значения по умолчанию) */
 
+      // RadMessageBox.Show($"Application settings works ! server name = {AppSettings.ServerName}");
+
       FmSettings.ConfirmExitButtonText = " Click me, my friend !";
 
       FmSettings.HeaderFormExit = "Test exit";

@@ -96,8 +96,11 @@ namespace TvWinForms
 
       var sw = Stopwatch.StartNew();
 
-      Task mainFormClosingAsync = Events.MainFormClosingAsync();
-      if (mainFormClosingAsync != null) await mainFormClosingAsync;
+      if (Events.MainFormClosingAsync != null)
+      {
+        Task mainFormClosingAsync = Events.MainFormClosingAsync();
+        if (mainFormClosingAsync != null) await mainFormClosingAsync;
+      }
 
       sw.Stop();
 
