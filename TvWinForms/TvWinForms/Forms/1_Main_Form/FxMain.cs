@@ -50,6 +50,8 @@ namespace TvWinForms
       TvMain.LineColor = Color.FromArgb(180, 180, 180);
       TvMain.LineStyle = TreeLineStyle.Dot;
       //TvMain.Padding = new Padding(10, 5, 5, 5);
+
+      MainForm.PnTreeview.Width = FrameworkSettings.TreeviewPanelWidth;
     }
 
     void AdjustStripViewContainer() // Полосу, отображающую вкладки, нужно скрыть //
@@ -57,7 +59,6 @@ namespace TvWinForms
       ((StripViewItemContainer)(this.PvMain.GetChildAt(0).GetChildAt(0))).Padding = new Padding(0);
       ((StripViewItemContainer)(this.PvMain.GetChildAt(0).GetChildAt(0))).Visibility = ElementVisibility.Collapsed;
     }
-
 
     internal void LaunchStartTimer()
     {
@@ -99,7 +100,6 @@ namespace TvWinForms
       page.Item.Visibility = ElementVisibility.Collapsed;
     }
 
-
     internal void SetEvents()
     {
       this.Load += new EventHandler(EventFormLoad);
@@ -117,7 +117,6 @@ namespace TvWinForms
       //this.FormClosing += new FormClosingEventHandler(EventFormClosing);
       //this.FormClosed += new FormClosedEventHandler(EventFormClosed);
     }
-
 
     internal void SetEventForSystemTrayIcon()
     {

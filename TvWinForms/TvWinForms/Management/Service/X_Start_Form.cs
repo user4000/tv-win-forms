@@ -1,4 +1,5 @@
 ﻿using System;
+using TvWinForms.Form;
 using System.Diagnostics;
 using Telerik.WinControls.UI;
 
@@ -15,8 +16,7 @@ namespace TvWinForms
 
     /// <summary>
     /// Setting the form to be selected after the application starts
-    /// </summary>
-    
+    /// </summary>  
     public void SetStartForm(ushort id)
     {
       IdStartForm = id;
@@ -25,12 +25,10 @@ namespace TvWinForms
         Trace.WriteLine($"[TvWinForms] framework: Warning! There is no form with id = {id}");
       }
     }
-
     
     /// <summary>
     /// Setting the form to be selected after the application starts
     /// </summary>
-
     public void SetStartForm(string UniqueFormName)
     {
       CodeStartForm = UniqueFormName;
@@ -42,7 +40,11 @@ namespace TvWinForms
 
     internal bool GotoStartForm()
     {
-      if (IdStartForm == 0) return false;
+      if (IdStartForm == 0)
+      {
+        Trace.WriteLine($"[TvWinForms] framework: Warning! IdStartForm = 0");
+        return false;
+      }
 
       bool result = false;
 
@@ -50,8 +52,15 @@ namespace TvWinForms
       {
         if (pair.Value.IdForm == IdStartForm)
         {
-          //result = SelectPage(pair.Value.Page);
-          // TODO: Сделать проверку, что не была выбрана форма EXIT //
+          // Trace.WriteLine($"FOUND !!! ---- {pair.Key} ---- {pair.Value.Form.GetType().FullName} ---- id = {pair.Value.IdForm}");
+
+          if (pair.Value.Form is FxExit)
+          {
+            result = false;
+            Trace.WriteLine($"[TvWinForms] framework: Warning! [FxExit] cannot be selected as a start form!");
+            return result;
+          }
+
           pair.Value.NodeForm.Selected = true;
           result = true;
           break;
@@ -63,7 +72,11 @@ namespace TvWinForms
 
     internal bool GotoStartFormUsingStringCode()
     {
-      if (string.IsNullOrWhiteSpace(CodeStartForm)) return false;
+      if (string.IsNullOrWhiteSpace(CodeStartForm))
+      {
+        Trace.WriteLine($"[TvWinForms] framework: Warning! CodeStartForm is EMPTY");
+        return false;
+      }
 
       bool result = false;
 
@@ -71,8 +84,14 @@ namespace TvWinForms
       {
         if (pair.Value.UniqueName == CodeStartForm)
         {
-          //result = SelectPage(pair.Value.Page);
-          // TODO: Сделать проверку, что не была выбрана форма EXIT //
+
+          if (pair.Value.Form is FxExit)
+          {
+            result = false;
+            Trace.WriteLine($"[TvWinForms] framework: Warning! [FxExit] cannot be selected as a start form!");
+            return result;
+          }
+
           pair.Value.NodeForm.Selected = true;
           result = true;
           break;

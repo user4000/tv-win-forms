@@ -8,9 +8,16 @@ namespace TvWinForms
   {
     static bool NodesWereHidden { get; set; } = false;
 
+    internal static bool TreeviewIsCollapsed() => MainForm.PnTreeview.Width < 70;
+
     private static void EventPanelTreeviewResize(object sender, EventArgs e)
     {
-      ShowMainNodes(MainForm.PnTreeview.Width > 70);
+      ShowMainNodes(TreeviewIsCollapsed() == false);
+
+      if (TreeviewIsCollapsed() == false)
+      {
+        FrameworkSettings.TreeviewPanelWidth = MainForm.PnTreeview.Width;
+      }
     }
 
     static void ShowMainNodes(bool show)

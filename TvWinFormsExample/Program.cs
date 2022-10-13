@@ -87,7 +87,7 @@ namespace TvWinFormsExample
 
       ushort aboutProgram = Service.AddForm<FxAboutProgram>(GroupManager.GroupStandardAboutProgram, "formAboutProgram", "About my super program", true, true);
 
-      //Service.SetStartForm("form8"); // or Service.SetStartForm(f3);
+      Service.SetStartForm(f5); // or Service.SetStartForm(f3);
     }
 
     static void SetApplicationEvents()

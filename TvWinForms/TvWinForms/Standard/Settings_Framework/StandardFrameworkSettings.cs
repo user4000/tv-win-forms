@@ -118,9 +118,22 @@ namespace TvWinForms
 
 
 
+    /// <summary>
+    /// The property is stored in the file.
+    /// </summary>
+    [JsonProperty(Order = 30)]
+    public int TreeviewPanelWidth { get; set; } = 250;
 
 
-    private byte valueColumnWidthPercent = 0;
+
+
+
+
+
+
+
+
+    private byte valueColumnWidthPercent = 50;
 
     /// <summary>
     /// The property is stored in the file.

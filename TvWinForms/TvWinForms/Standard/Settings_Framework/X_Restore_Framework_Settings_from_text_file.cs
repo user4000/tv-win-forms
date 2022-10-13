@@ -61,6 +61,8 @@ namespace TvWinForms
       FrameworkSettings.TreeviewNavigationAlwaysExpandOnSelect = settings.TreeviewNavigationAlwaysExpandOnSelect;
 
       FrameworkSettings.TreeviewNavigationPreventCollapseOnExit = settings.TreeviewNavigationPreventCollapseOnExit;
+
+      FrameworkSettings.TreeviewPanelWidth = settings.TreeviewPanelWidth;
     }
 
 
