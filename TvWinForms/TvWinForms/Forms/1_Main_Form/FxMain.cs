@@ -26,7 +26,7 @@ namespace TvWinForms
         this.Opacity = 0;
       }
 
-      this.MinimumSize = new Size(800, 400);
+      this.MinimumSize = new Size(800, 600);
 
       AdjustFirstPage();
 
