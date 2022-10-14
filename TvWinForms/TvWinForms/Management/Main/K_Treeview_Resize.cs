@@ -16,6 +16,8 @@ namespace TvWinForms
 
     private static void EventPanelTreeviewResize(object sender, EventArgs e)
     {
+      if (MainForm.WindowState == System.Windows.Forms.FormWindowState.Minimized) return;
+
       ShowMainNodes(TreeviewIsCollapsed() == false);
 
       if (TreeviewIsCollapsed() == false)
