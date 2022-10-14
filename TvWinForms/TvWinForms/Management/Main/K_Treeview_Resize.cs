@@ -9,6 +9,11 @@ namespace TvWinForms
 
     internal static bool TreeviewIsCollapsed() => MainForm.PnTreeview.Width < 70;
 
+    internal static bool TreeviewIsTooWide() => MainForm.PnTreeview.Width > TreeviewMaxWidth;
+
+    static int TreeviewMaxWidth { get => ((2 * MainForm.Width) / 5); }
+
+
     private static void EventPanelTreeviewResize(object sender, EventArgs e)
     {
       ShowMainNodes(TreeviewIsCollapsed() == false);
@@ -16,6 +21,11 @@ namespace TvWinForms
       if (TreeviewIsCollapsed() == false)
       {
         FrameworkSettings.TreeviewPanelWidth = MainForm.PnTreeview.Width;
+      }
+
+      if (TreeviewIsTooWide())
+      {
+        MainForm.PnTreeview.Width = TreeviewMaxWidth; 
       }
     }
 
