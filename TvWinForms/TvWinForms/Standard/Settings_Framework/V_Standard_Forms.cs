@@ -5,10 +5,8 @@ using static TvWinForms.FrameworkManager;
 
 namespace TvWinForms
 {
-
   partial class StandardFrameworkSettings
   {
-
     private string headerFormSettings = "Settings";
     public string HeaderFormSettings
     {
@@ -18,8 +16,6 @@ namespace TvWinForms
         if (!string.IsNullOrWhiteSpace(value)) headerFormSettings = value;
       }
     }
-
-
 
 
     private string headerFormExit = "Exit";
@@ -33,7 +29,6 @@ namespace TvWinForms
     }
 
 
-
     private string headerFormLog = "Message log";
     public string HeaderFormLog
     {
@@ -43,6 +38,48 @@ namespace TvWinForms
         if (!string.IsNullOrWhiteSpace(value)) headerFormLog = value;
       }
     }
+
+
+    private string headerGroupMessagesAndSettings = "Messages and settings";
+    public string HeaderGroupMessagesAndSettings
+    {
+      get => headerGroupMessagesAndSettings;
+      set
+      {
+        if (!string.IsNullOrWhiteSpace(value)) headerGroupMessagesAndSettings = value;
+      }
+    }
+
+
+    private string headerGroupExit = "Exit";
+    public string HeaderGroupExit
+    {
+      get => headerGroupExit;
+      set
+      {
+        if (!string.IsNullOrWhiteSpace(value)) headerGroupExit = value;
+      }
+    }
+
+
+    private string headerGroupAboutProgram = "About program";
+    public string HeaderGroupAboutProgram
+    {
+      get => headerGroupAboutProgram;
+      set
+      {
+        if (!string.IsNullOrWhiteSpace(value)) headerGroupAboutProgram = value;
+      }
+    }
+
+
+
+
+
+
+
+
+
 
 
 

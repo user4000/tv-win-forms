@@ -37,5 +37,7 @@ namespace TvWinForms
       Group group = new Group(code, text, rank, expandOnSelect, collapseOnExit);
       return group;
     }
+
+    internal void SetText(string text) => Text = text;
   }
 }

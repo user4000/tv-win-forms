@@ -15,8 +15,6 @@ namespace TvWinForms
       }
 
 
-
-
       #region Tune Icons ---------------------------------------------------------------------------------------------------------
 
       SetIconDefaultValuesIfTheyHaveNoAnyValue();

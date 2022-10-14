@@ -7,13 +7,11 @@ namespace TvWinForms
 {
   public class CxGroupManager
   {
-
     public string CodeStandardGroupMessagesAndSettings { get; } = "Framework_standard_group____messages_and_settings";
 
     public string CodeStandardGroupExitFromTheApplication { get; } = "Framework_standard_group____main_exit";
 
     public string CodeStandardGroupAboutProgram { get; } = "Framework_standard_group____about_program";
-
 
 
     List<Group> Groups { get; } = new List<Group>();
@@ -93,8 +91,8 @@ namespace TvWinForms
       GroupStandardCodes.Add(CodeStandardGroupMessagesAndSettings);
       GroupStandardCodes.Add(CodeStandardGroupExitFromTheApplication);
 
-      GroupStandardMessagesAndSettings = this.Create(CodeStandardGroupMessagesAndSettings, "Messages and Settings", "z01", true);
-      GroupStandardAboutProgram = this.Create(CodeStandardGroupAboutProgram, "About Program", "z02", true, true);
+      GroupStandardMessagesAndSettings = this.Create(CodeStandardGroupMessagesAndSettings, "Settings and messages", "z01", true);
+      GroupStandardAboutProgram = this.Create(CodeStandardGroupAboutProgram, "About program", "z02", true, true);
       GroupStandardExit = this.Create(CodeStandardGroupExitFromTheApplication, "Exit", "z03", true, true);
     }
 
@@ -117,7 +115,11 @@ namespace TvWinForms
     internal void TreeviewCreateGroups()
     {
       FrameworkManager.MainForm.TvMain.AllowEdit = false;
-      
+
+      GroupStandardExit.SetText(FrameworkManager.FrameworkSettings.HeaderGroupExit);
+      GroupStandardAboutProgram.SetText(FrameworkManager.FrameworkSettings.HeaderGroupAboutProgram);
+      GroupStandardMessagesAndSettings.SetText(FrameworkManager.FrameworkSettings.HeaderGroupMessagesAndSettings);
+ 
       foreach (Group group in Groups)
       {        
         FrameworkManager.MainForm.TvMain.Nodes.Add(CreateGroupNode(group));
