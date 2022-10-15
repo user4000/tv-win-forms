@@ -33,6 +33,8 @@ namespace TvWinForms.Forms
         page.Item.Visibility = ElementVisibility.Hidden;
       }
 
+      FrameworkManager.ImageLoader.TryToLoadImages();
+
       #region Tune Icons ---------------------------------------------------------------------------------------------------------
 
       FrameworkManager.SetIconDefaultValuesIfTheyHaveNoAnyValue();

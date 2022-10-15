@@ -22,9 +22,12 @@ namespace TvWinForms
 
     public static UserEvents Events { get; } = UserEvents.Create();
 
+    public static CxGroupManager GroupManager { get; } = CxGroupManager.CreateManager();
+
     public static CxThemeManager ThemeManager { get; } = CxThemeManager.Create();
 
-    public static CxGroupManager GroupManager { get; } = CxGroupManager.CreateManager();
+    public static CxImageLoader ImageLoader { get; } = CxImageLoader.Create();
+
 
 
     public static T ApplicationSettings<T>() => (T)(object)Service.CurrentApplicationSettings;

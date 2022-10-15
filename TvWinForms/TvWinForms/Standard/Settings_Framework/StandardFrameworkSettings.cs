@@ -77,7 +77,14 @@ namespace TvWinForms
 
 
 
+    /// <summary>
+    /// The property is stored in the file.
+    /// </summary>
+    [JsonProperty(Order = 35)]
+    public bool AllowLoadingImagesForTreeviewFromFiles { get; set; } = false;
 
+
+    
 
 
 

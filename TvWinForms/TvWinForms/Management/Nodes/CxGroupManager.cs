@@ -103,10 +103,10 @@ namespace TvWinForms
       node.SetGroup(group);
       node.ForeColor = FrameworkManager.FrameworkSettings.ColorTreeviewGroupNode;
       node.Font = FrameworkManager.FrameworkSettings.FontTreeviewGroupNode ?? FrameworkManager.MainForm.TvMain.Font;
-      node.Image = FrameworkManager.MainForm.PicGroupNode.Image;
+      node.Image = FrameworkManager.MainForm.PicGroup.Image;
 
       if (group.Code == this.CodeStandardGroupExitFromTheApplication) node.Image = FrameworkManager.MainForm.PicGroupExit.Image;
-      if (group.Code == this.CodeStandardGroupMessagesAndSettings) node.Image = FrameworkManager.MainForm.PicGroupMessagesAndSettings.Image;
+      if (group.Code == this.CodeStandardGroupMessagesAndSettings) node.Image = FrameworkManager.MainForm.PicGroupSettings.Image;
 
       node.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
 

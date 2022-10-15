@@ -109,6 +109,7 @@
       <DependentUpon>FxMessage.cs</DependentUpon>
     </Compile>
     <Compile Include="Management\Events\Events.cs" />
+    <Compile Include="Management\Image_Loader\CxImageLoader.cs" />
     <Compile Include="Management\Logger\CxLogger.cs" />
     <Compile Include="Management\Logger\CxLoggerDefaultConfiguration.cs" />
     <Compile Include="Management\Main\FrameworkManager.cs" />

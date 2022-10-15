@@ -98,11 +98,11 @@ namespace TvWinForms
 
       node.SetForm(subForm);
       node.SetGroup(group);
-      node.Image = MainForm.PicUserForm.Image;
+      node.Image = MainForm.PicItem.Image;
 
-      if (subForm.Form is FxLog) node.Image = MainForm.PicLog.Image;
-      if (subForm.Form is FxExit) node.Image = MainForm.PicExit.Image;
-      if (subForm.Form is FxSettings) node.Image = MainForm.PicSettings.Image;
+      if (subForm.Form is FxLog) node.Image = MainForm.PicItemMessages.Image;
+      if (subForm.Form is FxExit) node.Image = MainForm.PicItemExit.Image;
+      if (subForm.Form is FxSettings) node.Image = MainForm.PicItemSettings.Image;
 
       node.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
 

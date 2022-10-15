@@ -57,6 +57,8 @@ namespace TvWinForms
       FrameworkSettings.TreeviewNavigationPreventCollapseOnExit = settings.TreeviewNavigationPreventCollapseOnExit;
 
       FrameworkSettings.TreeviewPanelWidth = settings.TreeviewPanelWidth;
+
+      FrameworkSettings.AllowLoadingImagesForTreeviewFromFiles = settings.AllowLoadingImagesForTreeviewFromFiles;
     }
 
 
