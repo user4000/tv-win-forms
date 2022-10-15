@@ -41,7 +41,7 @@ namespace TvWinForms
     public static bool FlagSystemTrayIconIsConfigured { get; private set; } = false; // Пользователь хочет использовать иконку приложения в системном лотке //
 
 
-    static bool FlagServiceApplication()
+    internal static bool FlagServiceApplication()
     {
       return 
         (FrameworkSettings.FlagMainFormStartMinimized) && 
@@ -82,7 +82,7 @@ namespace TvWinForms
 
 
 
-    static void SetIconDefaultValuesIfTheyHaveNoAnyValue()
+    internal static void SetIconDefaultValuesIfTheyHaveNoAnyValue()
     {
       if (IconApplication == null) IconApplication = Properties.Resources.ApplicationIcon;
       if (IconSystemTray == null) IconSystemTray = Properties.Resources.ApplicationIcon;

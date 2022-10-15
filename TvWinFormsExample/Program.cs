@@ -45,6 +45,17 @@ namespace TvWinFormsExample
       FmSettings.HeaderFormExit = "Test exit";
       FmSettings.HeaderFormLog = "Test log";
       FmSettings.HeaderFormSettings = "Test settings";
+
+      FmSettings.TreeviewMenuItemCollapse = "Свернуть";
+      FmSettings.TreeviewMenuItemExpand = "Развернуть";
+
+      FmSettings.FontTreeviewGroupNode = new System.Drawing.Font("Arial", 12, System.Drawing.FontStyle.Italic);
+      FmSettings.FontTreeviewSubFormNode = new System.Drawing.Font("Segoe UI", 12, System.Drawing.FontStyle.Underline);
+
+      if (AppSettings == null)
+      {
+        RadMessageBox.Show("ERROR !!! AppSettings is NULL !!!");
+      }
     }
 
     static void OverrideFrameworkSettingsAfterLoadingFromTextFile()

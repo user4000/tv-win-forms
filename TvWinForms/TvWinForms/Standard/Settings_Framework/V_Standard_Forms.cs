@@ -75,10 +75,19 @@ namespace TvWinForms
 
 
 
+    public string TreeviewMenuItemExpand { get; set; } = "Expand";
+
+    public string TreeviewMenuItemCollapse { get; set; } = "Collapse";
 
 
+    public Font FontTreeviewGroupNode { get; set; } = null;
+
+    public Font FontTreeviewSubFormNode { get; set; } = null;
 
 
+    public Color ColorTreeviewGroupNode { get; set; } = Color.Black;
+
+    public Color ColorTreeviewSubFormNode { get; set; } = Color.DarkBlue;
 
 
 

@@ -8,40 +8,9 @@ namespace TvWinForms
     static FxMain CreateMainForm()
     {
       MainForm = new FxMain();
+
+      MainForm.Configure();
      
-      foreach(var page in MainForm.PvMain.Pages)
-      {
-        page.Item.Visibility = Telerik.WinControls.ElementVisibility.Hidden;
-      }
-
-
-      #region Tune Icons ---------------------------------------------------------------------------------------------------------
-
-      SetIconDefaultValuesIfTheyHaveNoAnyValue();
-
-      MainForm.Icon = IconApplication;
-      MainForm.NotifyIconMainForm.Icon = IconSystemTray;
-
-      #endregion ----------------------------------------------------------------------------------------------------------------
-
-
-      MainForm.Text = FrameworkSettings.MainFormCaption;
-
-      MainForm.Visible = false;
-
-      if (FlagServiceApplication()) MainForm.WindowState = FormWindowState.Minimized;
-
-      MainForm.ShowMainPageView(false);
-
-      Service.Configure(MainForm);
-
-      Pages.Configure(MainForm);
-
-      MainForm.Text = FrameworkSettings.MainFormCaption;
-
-      MainForm.SetProperties();
-
-      MainForm.SetEvents();
 
       MainForm.FormClosing += new FormClosingEventHandler(EventMainFormClosing);
 

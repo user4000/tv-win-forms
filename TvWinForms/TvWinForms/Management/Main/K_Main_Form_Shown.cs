@@ -1,6 +1,5 @@
 ﻿using System;
 using Telerik.WinControls.UI;
-using TvWinForms.Extensions;
 
 namespace TvWinForms
 {

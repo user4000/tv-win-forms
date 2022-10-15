@@ -54,7 +54,7 @@ namespace TvWinForms
       subForm.SetPage(page);
 
       page.Tag = subForm;
-     
+
       CreateTreeNode(subForm);
     }
 
@@ -85,7 +85,8 @@ namespace TvWinForms
       CxNode node = new CxNode()
       {
         Text = "  " + subForm.PageText,
-        Font = FrameworkManager.MainForm.TvMain.Font,
+        Font = FrameworkManager.FrameworkSettings.FontTreeviewSubFormNode ?? FrameworkManager.MainForm.TvMain.Font,
+        ForeColor = FrameworkManager.FrameworkSettings.ColorTreeviewSubFormNode
       };
 
       RadTreeNode groupNode = nodesFound[0];

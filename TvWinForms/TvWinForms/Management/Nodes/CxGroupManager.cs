@@ -101,7 +101,8 @@ namespace TvWinForms
       CxNode node = new CxNode();
       node.Text = "  " + group.Text;
       node.SetGroup(group);
-      node.Font = FrameworkManager.MainForm.TvMain.Font;
+      node.ForeColor = FrameworkManager.FrameworkSettings.ColorTreeviewGroupNode;
+      node.Font = FrameworkManager.FrameworkSettings.FontTreeviewGroupNode ?? FrameworkManager.MainForm.TvMain.Font;
       node.Image = FrameworkManager.MainForm.PicGroupNode.Image;
 
       if (group.Code == this.CodeStandardGroupExitFromTheApplication) node.Image = FrameworkManager.MainForm.PicGroupExit.Image;

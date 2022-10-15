@@ -71,12 +71,17 @@
     <Compile Include="Alert\TmAlert.cs" />
     <Compile Include="Alert\TmAlertPainter.cs" />
     <Compile Include="Alert\TmAlertService.cs" />
-    <Compile Include="Forms\1_Main_Form\FxMain.cs">
+    <Compile Include="Forms\1_Main_Form\Form\FxMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\1_Main_Form\FxMain.Designer.cs">
+    <Compile Include="Forms\1_Main_Form\Form\FxMain.Designer.cs">
       <DependentUpon>FxMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\1_Main_Form\Helper\HxMainForm.cs" />
+    <Compile Include="Forms\1_Main_Form\Helper\NxAdjustFormElements.cs" />
+    <Compile Include="Forms\1_Main_Form\Helper\NxEventsOfMainForm.cs" />
+    <Compile Include="Forms\1_Main_Form\Helper\NxFormVisualEffects.cs" />
+    <Compile Include="Forms\1_Main_Form\Helper\NxTreeviewContextMenu.cs" />
     <Compile Include="Forms\2_Log\AxLog.cs" />
     <Compile Include="Forms\2_Log\FxLog.cs">
       <SubType>Form</SubType>
@@ -191,7 +196,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\1_Main_Form\FxMain.resx">
+    <EmbeddedResource Include="Forms\1_Main_Form\Form\FxMain.resx">
       <DependentUpon>FxMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\2_Log\FxLog.resx">
