@@ -59,6 +59,10 @@ namespace TvWinForms
       FrameworkSettings.TreeviewPanelWidth = settings.TreeviewPanelWidth;
 
       FrameworkSettings.AllowLoadingImagesForTreeviewFromFiles = settings.AllowLoadingImagesForTreeviewFromFiles;
+
+      FrameworkSettings.ColorTreeviewBackground = settings.ColorTreeviewBackground;
+
+      FrameworkSettings.TreeviewIsLocatedOnTheLeftSide = settings.TreeviewIsLocatedOnTheLeftSide;
     }
 
 

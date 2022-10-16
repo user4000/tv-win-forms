@@ -27,6 +27,7 @@ namespace TvWinForms
         ThemeManager.SetApplicationTheme(FrameworkSettings.ThemeName);
       }
 
+
       //Application.ApplicationExit += new EventHandler(EventApplicationExit);
 
       return MainForm;

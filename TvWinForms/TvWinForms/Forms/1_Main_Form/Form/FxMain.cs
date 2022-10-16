@@ -87,8 +87,9 @@ namespace TvWinForms
       }
       else if (this.WindowState == FormWindowState.Normal)
       {
-        this.Show();
-        this.ShowInTaskbar = true;
+        if (this.Visible == false) this.Show();
+        if (this.ShowInTaskbar == false) this.ShowInTaskbar = true;
+        if (PnTreeview.Width > FrameworkManager.TreeviewMaxWidth) PnTreeview.Width = FrameworkManager.TreeviewMaxWidth;
       }
     }
 
@@ -99,10 +100,27 @@ namespace TvWinForms
       ((RadPageViewStripElement)this.PvMain.ViewElement).ItemContainer.Visibility = show ? ElementVisibility.Visible : ElementVisibility.Collapsed;
     }
 
+
+    public void ChangeTreeviewDockSide() => MnForm.ChangeTreeviewDockSide();
+
     public void ShowSystemTrayIcon(bool show)
     {
       if (this.NotifyIconMainForm.Icon == null) return;
       this.NotifyIconMainForm.Visible = show;
+    }
+
+    public void ShowTreeviewPanel(bool show, int width = 0)
+    {
+      if (show == false)
+      {
+        PnTreeview.Width = 30;
+        return;
+      }
+
+      if (width <= 10) width = FrameworkManager.TreeviewMaxWidth;
+      if (width > FrameworkManager.TreeviewMaxWidth) width = FrameworkManager.TreeviewMaxWidth;
+
+      PnTreeview.Width = width;
     }
   }
 }

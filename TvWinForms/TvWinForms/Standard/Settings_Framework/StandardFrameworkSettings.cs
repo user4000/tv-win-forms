@@ -84,7 +84,25 @@ namespace TvWinForms
     public bool AllowLoadingImagesForTreeviewFromFiles { get; set; } = false;
 
 
-    
+
+
+    /// <summary>
+    /// The property is stored in the file.
+    /// </summary>
+    [JsonProperty(Order = 45)]
+    public Color? ColorTreeviewBackground { get; set; } = null;
+
+
+
+    /// <summary>
+    /// The property is stored in the file.
+    /// </summary>
+    [JsonProperty(Order = 46)]
+    public bool TreeviewIsLocatedOnTheLeftSide { get; set; } = true;
+
+
+
+
 
 
 

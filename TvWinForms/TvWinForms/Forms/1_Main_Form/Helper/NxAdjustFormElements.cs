@@ -10,10 +10,27 @@ namespace TvWinForms.Forms
 {
   partial class HxMainForm
   {
+    DateTime TimeDockSideChange { get; set; } = new DateTime(2022, 1, 1);
+
+    internal void ChangeTreeviewDockSide()
+    {
+      var diffInSeconds = Math.Abs( (DateTime.Now - TimeDockSideChange).TotalSeconds);
+      if (diffInSeconds < 2) return;
+
+      TimeDockSideChange = DateTime.Now;
+
+      DockStyle dock = (Form.PnTreeview.Dock == DockStyle.Right ? DockStyle.Left : DockStyle.Right);
+      Form.PnTreeview.Dock = dock;
+      Form.SplitterMainVertical.Dock = dock;
+    }
+
     internal void AdjustMainPageviewAndTreeview() // Настроим центральные элементы главной формы //
     {
-      Form.PnTreeview.Dock = DockStyle.Left;
-      Form.SplitterMainVertical.Dock = DockStyle.Left;
+      bool leftSide = FrameworkSettings.TreeviewIsLocatedOnTheLeftSide;
+      DockStyle dock = leftSide ? DockStyle.Left : DockStyle.Right;
+
+      Form.PnTreeview.Dock = dock;
+      Form.SplitterMainVertical.Dock = dock;
       Form.PvMain.Dock = DockStyle.Fill;
       Form.SplitterMainVertical.BringToFront();
       Form.PvMain.BringToFront();

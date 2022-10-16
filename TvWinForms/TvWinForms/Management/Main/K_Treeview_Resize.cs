@@ -11,7 +11,7 @@ namespace TvWinForms
 
     internal static bool TreeviewIsTooWide() => MainForm.PnTreeview.Width > TreeviewMaxWidth;
 
-    static int TreeviewMaxWidth { get => ((2 * MainForm.Width) / 5); }
+    internal static int TreeviewMaxWidth { get => ((3 * MainForm.Width) / 10); }
 
 
     private static void EventPanelTreeviewResize(object sender, EventArgs e)

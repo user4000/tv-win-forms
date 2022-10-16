@@ -13,8 +13,8 @@ namespace TvWinForms
 
       Events.BeforeMainFormBecomesVisible?.Invoke();
 
-      MainForm.TvMain.TreeViewElement.BackColor = MainForm.BackColor; //MainForm.PageEmpty.BackColor;  
-
+      MainForm.TvMain.TreeViewElement.BackColor = FrameworkSettings.ColorTreeviewBackground ?? MainForm.BackColor;
+   
       MainForm.VisualEffectFadeIn();
 
       MainForm.Visible = true;
