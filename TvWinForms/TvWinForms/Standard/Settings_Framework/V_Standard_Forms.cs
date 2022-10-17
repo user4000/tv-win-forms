@@ -81,8 +81,17 @@ namespace TvWinForms
     public string TreeviewMenuItemCollapse { get; set; } = "Collapse";
 
 
+    /// <summary>
+    /// The property is stored in the file.
+    /// </summary>
+    [JsonProperty(Order = 53)]
     public Font FontTreeviewGroupNode { get; set; } = null;
 
+
+    /// <summary>
+    /// The property is stored in the file.
+    /// </summary>
+    [JsonProperty(Order = 53)]
     public Font FontTreeviewSubFormNode { get; set; } = null;
 
 

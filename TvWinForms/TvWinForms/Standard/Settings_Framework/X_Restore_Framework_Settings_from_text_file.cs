@@ -71,6 +71,10 @@ namespace TvWinForms
       FrameworkSettings.ColorTreeviewGroupNodeDisabled = settings.ColorTreeviewGroupNodeDisabled;
 
       FrameworkSettings.ColorTreeviewSubFormNodeDisabled = settings.ColorTreeviewSubFormNodeDisabled;
+
+      FrameworkSettings.FontTreeviewGroupNode = settings.FontTreeviewGroupNode;
+
+      FrameworkSettings.FontTreeviewSubFormNode = settings.FontTreeviewSubFormNode;
     }
 
 
