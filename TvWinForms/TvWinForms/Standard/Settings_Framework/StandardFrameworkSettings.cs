@@ -1,10 +1,6 @@
 ﻿using System;
-using System.IO;
 using System.Drawing;
 using Newtonsoft.Json;
-using TvWinForms.Tools;
-using System.Windows.Forms;
-using Telerik.WinControls.UI;
 using static TvWinForms.FrameworkManager;
 
 namespace TvWinForms
@@ -13,8 +9,6 @@ namespace TvWinForms
   public partial class StandardFrameworkSettings : StandardJsonSettings<StandardFrameworkSettings>
   {
     StandardFrameworkSettings SettingsLoadedFromFile { get; set; }
-
-
 
 
     private Font pageViewFont = new Font("Verdana", 9, FontStyle.Regular);
@@ -282,9 +276,6 @@ namespace TvWinForms
 
     [JsonProperty(Order = 100)]
     public bool FlagMainFormStartMinimized { get; set; } = false;
-
-
-
 
   }
 }

@@ -86,7 +86,8 @@ namespace TvWinForms
       {
         Text = "  " + subForm.PageText,
         Font = FrameworkManager.FrameworkSettings.FontTreeviewSubFormNode ?? FrameworkManager.MainForm.TvMain.Font,
-        ForeColor = FrameworkManager.FrameworkSettings.ColorTreeviewSubFormNode
+        ColorDefault = FrameworkManager.FrameworkSettings.ColorTreeviewSubFormNode,
+        ColorDisabled = FrameworkManager.FrameworkSettings.ColorTreeviewSubFormNodeDisabled
       };
 
       RadTreeNode groupNode = nodesFound[0];
@@ -117,6 +118,8 @@ namespace TvWinForms
       node.Enabled = subForm.FlagNodeEnabled;
 
       node.Visible = subForm.FlagNodeVisible;
+
+      node.SetColor();
     }
   }
 }

@@ -63,6 +63,14 @@ namespace TvWinForms
       FrameworkSettings.ColorTreeviewBackground = settings.ColorTreeviewBackground;
 
       FrameworkSettings.TreeviewIsLocatedOnTheLeftSide = settings.TreeviewIsLocatedOnTheLeftSide;
+
+      FrameworkSettings.ColorTreeviewGroupNode = settings.ColorTreeviewGroupNode;
+
+      FrameworkSettings.ColorTreeviewSubFormNode = settings.ColorTreeviewSubFormNode;
+
+      FrameworkSettings.ColorTreeviewGroupNodeDisabled = settings.ColorTreeviewGroupNodeDisabled;
+
+      FrameworkSettings.ColorTreeviewSubFormNodeDisabled = settings.ColorTreeviewSubFormNodeDisabled;
     }
 
 

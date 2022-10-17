@@ -30,7 +30,11 @@ namespace TvWinForms
       if ((page != null) && (page.Tag != null) && (page.Tag is SubForm))
       {
         SubForm subForm = page.Tag as SubForm;
-        if ((subForm != null) && (subForm.NodeForm != null) && (subForm.NodeForm.Enabled != enable)) subForm.NodeForm.Enabled = enable;
+        if ((subForm != null) && (subForm.NodeForm != null) && (subForm.NodeForm.Enabled != enable))
+        {
+          subForm.NodeForm.Enabled = enable;
+          CxNode.SetColor(subForm.NodeForm);
+        }
         result = true;
       }
 

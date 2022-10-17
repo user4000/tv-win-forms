@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 using static TvWinForms.FrameworkManager;
@@ -85,9 +86,38 @@ namespace TvWinForms
     public Font FontTreeviewSubFormNode { get; set; } = null;
 
 
+    /// <summary>
+    /// The property is stored in the file.
+    /// </summary>
+
+    [JsonProperty(Order = 51)]
     public Color ColorTreeviewGroupNode { get; set; } = Color.Black;
 
-    public Color ColorTreeviewSubFormNode { get; set; } = Color.DarkBlue;
+
+    /// <summary>
+    /// The property is stored in the file.
+    /// </summary>
+    
+    [JsonProperty(Order = 51)]
+    public Color ColorTreeviewSubFormNode { get; set; } = Color.Black;
+
+
+    /// <summary>
+    /// The property is stored in the file.
+    /// </summary>
+
+    [JsonProperty(Order = 51)]
+    public Color ColorTreeviewGroupNodeDisabled { get; set; } = Color.Gray;
+
+
+    /// <summary>
+    /// The property is stored in the file.
+    /// </summary>
+
+    [JsonProperty(Order = 51)]
+    public Color ColorTreeviewSubFormNodeDisabled { get; set; } = Color.Gray;
+
+
 
 
 

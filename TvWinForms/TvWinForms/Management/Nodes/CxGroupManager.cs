@@ -13,7 +13,6 @@ namespace TvWinForms
 
     public string CodeStandardGroupAboutProgram { get; } = "Framework_standard_group____about_program";
 
-
     List<Group> Groups { get; } = new List<Group>();
 
     HashSet<string> GroupCodes { get; } = new HashSet<string>();
@@ -48,7 +47,6 @@ namespace TvWinForms
     public bool StandardFrameworkGroup(string code) => GroupStandardCodes.Contains(code);
 
     public bool StandardFrameworkGroup(Group group) => StandardFrameworkGroup(group.Code);
-
 
     public Group Create(string code, string text, string rank, bool expandOnSelect = false, bool collapseOnExit = false)
     {
@@ -101,7 +99,8 @@ namespace TvWinForms
       CxNode node = new CxNode();
       node.Text = "  " + group.Text;
       node.SetGroup(group);
-      node.ForeColor = FrameworkManager.FrameworkSettings.ColorTreeviewGroupNode;
+      node.ColorDefault = FrameworkManager.FrameworkSettings.ColorTreeviewGroupNode;
+      node.ColorDisabled = FrameworkManager.FrameworkSettings.ColorTreeviewGroupNodeDisabled;
       node.Font = FrameworkManager.FrameworkSettings.FontTreeviewGroupNode ?? FrameworkManager.MainForm.TvMain.Font;
       node.Image = FrameworkManager.MainForm.PicGroup.Image;
 
@@ -109,6 +108,8 @@ namespace TvWinForms
       if (group.Code == this.CodeStandardGroupMessagesAndSettings) node.Image = FrameworkManager.MainForm.PicGroupSettings.Image;
 
       node.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+
+      node.SetColor();
 
       return node;
     }
