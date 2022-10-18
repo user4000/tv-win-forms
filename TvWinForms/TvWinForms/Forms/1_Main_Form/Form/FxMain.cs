@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Drawing;
 using TvWinForms.Forms;
+using System.Diagnostics;
 using Telerik.WinControls;
 using System.Windows.Forms;
 using Telerik.WinControls.UI;
-using TvWinForms.Extensions;
 using static TvWinForms.FrameworkManager;
 
 namespace TvWinForms
@@ -62,6 +61,8 @@ namespace TvWinForms
 
     internal void SetEventForSystemTrayIcon()
     {
+      this.Resize += new EventHandler(EventCheckTreeviewSize);
+
       if (FrameworkSettings.FlagMinimizeMainFormToSystemTray == false) return;
 
       if (FlagSystemTrayIconIsConfigured == false)
@@ -74,6 +75,15 @@ namespace TvWinForms
 
       this.NotifyIconMainForm.Visible = true;
       this.Resize += new EventHandler(EventResizeCheckWindowState);
+    }
+
+    private void EventCheckTreeviewSize(object sender, EventArgs e) 
+    {
+      if ((this.WindowState == FormWindowState.Normal) && (PnTreeview.Width > FrameworkManager.TreeviewMaxWidth))
+      {
+        // Если размер Treeview велик по сравнению с размером формы, то следует уменьшить ширину Treeview //
+        PnTreeview.Width = FrameworkManager.TreeviewMaxWidth;
+      }
     }
 
     void EventResizeCheckWindowState(object sender, EventArgs e)
@@ -89,7 +99,6 @@ namespace TvWinForms
       {
         if (this.Visible == false) this.Show();
         if (this.ShowInTaskbar == false) this.ShowInTaskbar = true;
-        if (PnTreeview.Width > FrameworkManager.TreeviewMaxWidth) PnTreeview.Width = FrameworkManager.TreeviewMaxWidth;
       }
     }
 
@@ -99,7 +108,6 @@ namespace TvWinForms
      
       ((RadPageViewStripElement)this.PvMain.ViewElement).ItemContainer.Visibility = show ? ElementVisibility.Visible : ElementVisibility.Collapsed;
     }
-
 
     public void ChangeTreeviewDockSide() => MnForm.ChangeTreeviewDockSide();
 

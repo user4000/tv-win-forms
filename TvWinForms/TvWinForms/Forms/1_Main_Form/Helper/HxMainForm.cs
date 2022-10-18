@@ -25,7 +25,6 @@ namespace TvWinForms.Forms
 
     internal static HxMainForm Create(FxMain mainForm) => new HxMainForm(mainForm);
 
-
     internal void Configure()
     {
       foreach (var page in Form.PvMain.Pages)
@@ -81,7 +80,6 @@ namespace TvWinForms.Forms
       AdjustMainPageviewAndTreeview();
     }
 
-
     void SetEvents()
     {
       Form.Load += new EventHandler(EventFormLoad);
@@ -96,7 +94,6 @@ namespace TvWinForms.Forms
       Form.NotifyIconMainForm.DoubleClick += new EventHandler(EventTrayIconDoubleClick);
 
       SetContextMenuForTreeview();
-
 
       // Следующие важные события будут запрограммированы в классе FrameworkManager //
 
