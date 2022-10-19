@@ -47,14 +47,16 @@ namespace TvWinForms
 
 
     /// <summary>
-    /// Order of execution 1
+    /// Order of execution 2
     /// </summary>
     public Action MainFormLoad { get; set; }
 
+
     /// <summary>
-    /// Order of execution 2
+    /// Order of execution 1
     /// </summary>
     public Action BeforeSubFormsAreCreated { get; set; }
+
 
     /// <summary>
     /// Order of execution 3
@@ -86,7 +88,7 @@ namespace TvWinForms
 
 
 
-
+    // public Func<Task> StartByTimerAsync { get; set; }
 
 
 

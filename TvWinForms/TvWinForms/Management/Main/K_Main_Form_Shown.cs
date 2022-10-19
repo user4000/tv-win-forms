@@ -9,8 +9,7 @@ namespace TvWinForms
     {
       MainForm.Shown -= new EventHandler(EventMainFormShown);
 
-      Events.BeforeSubFormsAreCreated?.Invoke();
-
+      
       Events.BeforeMainFormBecomesVisible?.Invoke();
 
       MainForm.TvMain.TreeViewElement.BackColor = FrameworkSettings.ColorTreeviewBackground ?? MainForm.BackColor;
@@ -20,21 +19,12 @@ namespace TvWinForms
       MainForm.Visible = true;
 
 
-
-
-
       // Установим новое событие - "Пользователь ходит по элементам древовидного списка" //
       MainForm.TvMain.SelectedNodeChanged += new RadTreeView.RadTreeViewEventHandler(EventSelectedNodeChanged);
 
       MainForm.TvMain.Click += new EventHandler(EventUserClickedOnTreeview);
 
       MainForm.PnTreeview.Resize += new EventHandler(EventPanelTreeviewResize);
-
-
-
-
-
-
 
 
 
