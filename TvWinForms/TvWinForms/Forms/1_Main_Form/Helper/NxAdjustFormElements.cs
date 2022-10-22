@@ -41,6 +41,7 @@ namespace TvWinForms.Forms
       Form.TvMain.LineStyle = TreeLineStyle.Dot;
       //TvMain.Padding = new Padding(10, 5, 5, 5);
 
+      Form.TvMain.ShowExpandCollapse = true;
       Form.PnTreeview.Width = FrameworkSettings.TreeviewPanelWidth;
     }
 

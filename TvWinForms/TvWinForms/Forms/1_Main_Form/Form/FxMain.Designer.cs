@@ -190,21 +190,21 @@
       this.PageImages.Size = new System.Drawing.Size(746, 586);
       this.PageImages.Text = "Images";
       // 
-      // PicExit
+      // PicItemExit
       // 
-      this.PicItemExit.Image = ((System.Drawing.Image)(resources.GetObject("PicExit.Image")));
+      this.PicItemExit.Image = ((System.Drawing.Image)(resources.GetObject("PicItemExit.Image")));
       this.PicItemExit.Location = new System.Drawing.Point(111, 122);
-      this.PicItemExit.Name = "PicExit";
+      this.PicItemExit.Name = "PicItemExit";
       this.PicItemExit.Size = new System.Drawing.Size(50, 50);
       this.PicItemExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
       this.PicItemExit.TabIndex = 1;
       this.PicItemExit.TabStop = false;
       // 
-      // PicGroupMessagesAndSettings
+      // PicGroupSettings
       // 
-      this.PicGroupSettings.Image = ((System.Drawing.Image)(resources.GetObject("PicGroupMessagesAndSettings.Image")));
+      this.PicGroupSettings.Image = ((System.Drawing.Image)(resources.GetObject("PicGroupSettings.Image")));
       this.PicGroupSettings.Location = new System.Drawing.Point(32, 191);
-      this.PicGroupSettings.Name = "PicGroupMessagesAndSettings";
+      this.PicGroupSettings.Name = "PicGroupSettings";
       this.PicGroupSettings.Size = new System.Drawing.Size(50, 50);
       this.PicGroupSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
       this.PicGroupSettings.TabIndex = 1;
@@ -220,41 +220,41 @@
       this.PicGroupExit.TabIndex = 1;
       this.PicGroupExit.TabStop = false;
       // 
-      // PicSettings
+      // PicItemSettings
       // 
-      this.PicItemSettings.Image = ((System.Drawing.Image)(resources.GetObject("PicSettings.Image")));
+      this.PicItemSettings.Image = ((System.Drawing.Image)(resources.GetObject("PicItemSettings.Image")));
       this.PicItemSettings.Location = new System.Drawing.Point(191, 191);
-      this.PicItemSettings.Name = "PicSettings";
+      this.PicItemSettings.Name = "PicItemSettings";
       this.PicItemSettings.Size = new System.Drawing.Size(50, 50);
       this.PicItemSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
       this.PicItemSettings.TabIndex = 0;
       this.PicItemSettings.TabStop = false;
       // 
-      // PicLog
+      // PicItemMessages
       // 
-      this.PicItemMessages.Image = ((System.Drawing.Image)(resources.GetObject("PicLog.Image")));
+      this.PicItemMessages.Image = ((System.Drawing.Image)(resources.GetObject("PicItemMessages.Image")));
       this.PicItemMessages.Location = new System.Drawing.Point(111, 191);
-      this.PicItemMessages.Name = "PicLog";
+      this.PicItemMessages.Name = "PicItemMessages";
       this.PicItemMessages.Size = new System.Drawing.Size(50, 50);
       this.PicItemMessages.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
       this.PicItemMessages.TabIndex = 0;
       this.PicItemMessages.TabStop = false;
       // 
-      // PicUserForm
+      // PicItem
       // 
-      this.PicItem.Image = ((System.Drawing.Image)(resources.GetObject("PicUserForm.Image")));
+      this.PicItem.Image = ((System.Drawing.Image)(resources.GetObject("PicItem.Image")));
       this.PicItem.Location = new System.Drawing.Point(111, 50);
-      this.PicItem.Name = "PicUserForm";
+      this.PicItem.Name = "PicItem";
       this.PicItem.Size = new System.Drawing.Size(50, 50);
       this.PicItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
       this.PicItem.TabIndex = 0;
       this.PicItem.TabStop = false;
       // 
-      // PicGroupNode
+      // PicGroup
       // 
-      this.PicGroup.Image = ((System.Drawing.Image)(resources.GetObject("PicGroupNode.Image")));
+      this.PicGroup.Image = ((System.Drawing.Image)(resources.GetObject("PicGroup.Image")));
       this.PicGroup.Location = new System.Drawing.Point(32, 50);
-      this.PicGroup.Name = "PicGroupNode";
+      this.PicGroup.Name = "PicGroup";
       this.PicGroup.Size = new System.Drawing.Size(50, 50);
       this.PicGroup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
       this.PicGroup.TabIndex = 0;
