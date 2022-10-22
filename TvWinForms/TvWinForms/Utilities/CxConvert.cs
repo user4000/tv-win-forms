@@ -20,7 +20,7 @@ namespace TvWinForms.Tools
       jsonSerializerSettings = new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore };
     }
 
-    internal static string DateTimeFormat { get; } = "yyyy-MM-dd HH:mm:ss";
+    private static string DateTimeFormat { get; } = "yyyy-MM-dd HH:mm:ss";
 
     internal static string Time { get => DateTime.Now.ToString(DateTimeFormat); }
 

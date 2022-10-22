@@ -36,6 +36,7 @@
       this.BxTest3 = new Telerik.WinControls.UI.RadButton();
       this.BxTest2 = new Telerik.WinControls.UI.RadButton();
       this.BxTest1 = new Telerik.WinControls.UI.RadButton();
+      this.BxTestAlertStack = new Telerik.WinControls.UI.RadButton();
       ((System.ComponentModel.ISupportInitialize)(this.LbFormTwo)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.TxtMessage)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.BxTest6)).BeginInit();
@@ -44,6 +45,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.BxTest3)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.BxTest2)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.BxTest1)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.BxTestAlertStack)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
       this.SuspendLayout();
       // 
@@ -121,11 +123,21 @@
       this.BxTest1.TabIndex = 10;
       this.BxTest1.Text = "Test 1";
       // 
+      // BxTestAlertStack
+      // 
+      this.BxTestAlertStack.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+      this.BxTestAlertStack.Location = new System.Drawing.Point(476, 31);
+      this.BxTestAlertStack.Name = "BxTestAlertStack";
+      this.BxTestAlertStack.Size = new System.Drawing.Size(221, 37);
+      this.BxTestAlertStack.TabIndex = 11;
+      this.BxTestAlertStack.Text = "Test Alert Stack";
+      // 
       // FxForm2
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1081, 671);
+      this.Controls.Add(this.BxTestAlertStack);
       this.Controls.Add(this.BxTest6);
       this.Controls.Add(this.BxTest5);
       this.Controls.Add(this.BxTest4);
@@ -148,6 +160,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.BxTest3)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.BxTest2)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.BxTest1)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.BxTestAlertStack)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
@@ -164,5 +177,6 @@
     public Telerik.WinControls.UI.RadButton BxTest3;
     public Telerik.WinControls.UI.RadButton BxTest2;
     public Telerik.WinControls.UI.RadButton BxTest1;
+    public Telerik.WinControls.UI.RadButton BxTestAlertStack;
   }
 }

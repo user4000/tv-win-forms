@@ -87,8 +87,10 @@ namespace TvWinForms
     public Action StartByTimer { get; set; }
 
 
-
-    // public Func<Task> StartByTimerAsync { get; set; }
+    /// <summary>
+    /// Order of execution 8
+    /// </summary>
+    public Func<Task> StartByTimerAsync { get; set; }
 
 
 

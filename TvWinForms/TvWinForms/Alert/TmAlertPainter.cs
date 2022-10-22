@@ -52,7 +52,7 @@ namespace TvWinForms
 
       alert.Popup.AlertElement.BackColor = MainColor;
       alert.Popup.AlertElement.GradientStyle = GradientStyles.Solid;
-      alert.Popup.AlertElement.BorderColor = Color.Gray;
+      alert.Popup.AlertElement.BorderColor = Color.Gray;      
     }
 
     private void SetColorForSuccess(RadDesktopAlert alert)
@@ -115,11 +115,13 @@ namespace TvWinForms
       Alert.Popup.AlertElement.ContentElement.TextImageRelation = TextImageRelation.TextBeforeImage;
       Alert.Popup.AlertElement.GradientStyle = GradientStyles.Gel;
       Alert.Popup.AlertElement.CaptionElement.TextAndButtonsElement.TextElement.TextWrap = true;
+      Alert.Popup.AlertElement.CaptionElement.CaptionGrip.AutoSizeMode = RadAutoSizeMode.FitToAvailableSize;
     }
 
     internal void SetColor(RadDesktopAlert Alert, MsgType MessageType)
     {
       SetStyle(Alert);
+
       switch ((byte)MessageType)
       {
         case 0: // Debug //
@@ -138,7 +140,7 @@ namespace TvWinForms
         case 5: // Error //
           SetColorForError(Alert); break;
         default: break;
-      }
+      }      
     }
   }
 }

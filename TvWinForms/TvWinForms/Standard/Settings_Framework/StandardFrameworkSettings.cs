@@ -254,6 +254,13 @@ namespace TvWinForms
     public int StartTimerIntervalMilliseconds { get; set; } = 200;
 
 
+    /// <summary>
+    /// The property is stored in the file.
+    /// </summary>
+
+    [JsonProperty(Order = 50)]
+    public int StartTimerAsyncIntervalMilliseconds { get; set; } = 2000;
+
 
 
 

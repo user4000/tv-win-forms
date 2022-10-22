@@ -12,6 +12,9 @@ namespace TvWinForms
   {
     System.Windows.Forms.Timer TmStartMainApplication { get; set; } = new System.Windows.Forms.Timer();
 
+    System.Windows.Forms.Timer TmStartMainApplicationAsync { get; set; } = new System.Windows.Forms.Timer();
+
+
     public bool FlagSizeIsBeingChanged { get; internal set; } = false;
   
     internal HxMainForm MnForm { get; private set; }
@@ -42,9 +45,22 @@ namespace TvWinForms
 
       if (milliseconds == 0) return;
 
-      this.TmStartMainApplication.Interval = FrameworkSettings.StartTimerIntervalMilliseconds;
+      this.TmStartMainApplication.Interval = milliseconds;
       this.TmStartMainApplication.Tick += new EventHandler(EventStartMainApplication);
       this.TmStartMainApplication.Start();
+    }
+
+    internal void LaunchStartTimerAsync()
+    {
+      if (FrameworkManager.Events.StartByTimerAsync == null) return;
+
+      int milliseconds = Math.Abs(FrameworkSettings.StartTimerAsyncIntervalMilliseconds);
+
+      if (milliseconds == 0) return;
+
+      this.TmStartMainApplicationAsync.Interval = milliseconds;
+      this.TmStartMainApplicationAsync.Tick += new EventHandler(EventStartMainApplicationAsync);
+      this.TmStartMainApplicationAsync.Start();
     }
 
 
@@ -55,8 +71,12 @@ namespace TvWinForms
       FrameworkManager.Events.StartByTimer?.Invoke();
     }
 
-
-
+    internal async void EventStartMainApplicationAsync(object sender, EventArgs e)
+    {
+      this.TmStartMainApplicationAsync.Stop();
+      this.TmStartMainApplicationAsync.Tick -= new EventHandler(EventStartMainApplicationAsync);
+      if (FrameworkManager.Events.StartByTimerAsync != null) await FrameworkManager.Events.StartByTimerAsync();
+    }
 
 
     internal void SetEventForSystemTrayIcon()

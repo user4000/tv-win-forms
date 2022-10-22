@@ -134,7 +134,11 @@ namespace TvWinFormsExample
         Ms.ShortMessage("Application has been started", 290, null, MsgPos.BottomRight).Info(1);
       };
 
-
+      Func<Task> funcTask7 = async () =>
+      {
+        await Task.Delay(200);
+        Ms.Message("TEST !", "Start by Timer Async !").Single(MsgPos.TopCenter).Debug(3);
+      };
 
 
 
@@ -153,6 +157,8 @@ namespace TvWinFormsExample
       Events.Start = action5;        // <--- Данное событие есть основная стартовая точка приложения // 
 
       Events.StartByTimer = action6; // <--- Ещё одна стартовая точка приложения, выполняемая с задержкой (настройка FrameworkSettings.StartTimerIntervalMilliseconds) // 
+
+      Events.StartByTimerAsync = funcTask7;
     }
 
     static void SetEventsMainFormClosing()

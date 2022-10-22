@@ -50,6 +50,8 @@ namespace TvWinForms
 
       MainForm.LaunchStartTimer();
 
+      MainForm.LaunchStartTimerAsync();
+
       MainForm.SetEventForSystemTrayIcon();
 
       if (FlagServiceApplication()) MainForm.ShowInTaskbar = false; // Если это серверное приложение то не показывать его на панели задач //

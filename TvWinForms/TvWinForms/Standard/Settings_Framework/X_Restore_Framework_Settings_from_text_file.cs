@@ -12,7 +12,9 @@ namespace TvWinForms
 
       FrameworkSettings.StartTimerIntervalMilliseconds = settings.StartTimerIntervalMilliseconds;
 
-       FrameworkSettings.TimeCheckOldLogFiles = settings.TimeCheckOldLogFiles;
+      FrameworkSettings.StartTimerAsyncIntervalMilliseconds = settings.StartTimerAsyncIntervalMilliseconds;
+
+      FrameworkSettings.TimeCheckOldLogFiles = settings.TimeCheckOldLogFiles;
 
       FrameworkSettings.FlagMinimizeMainFormBeforeClosing = settings.FlagMinimizeMainFormBeforeClosing;
 

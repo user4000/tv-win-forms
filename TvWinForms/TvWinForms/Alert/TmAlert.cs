@@ -8,13 +8,19 @@ namespace TvWinForms
     internal TmAlert(IContainer container) : base(container)
     {
       AutoClose = true;
-      FadeAnimationFrames = 100;
-      FadeAnimationSpeed = 50;
-      FadeAnimationType = FadeAnimationType.FadeOut;
+
+      //FadeAnimationFrames = 10;
+      //FadeAnimationSpeed = 5;
+      //FadeAnimationType = FadeAnimationType.FadeOut;
+
       AutoSize = true;
       CanMove = true;
+
       PopupAnimation = false;
-      ShowOptionsButton = false;
+      PopupAnimationDirection = RadDirection.Down;
+      PopupAnimationEasing = Telerik.WinControls.RadEasingType.Default;
+
+      ShowOptionsButton = false;    
       Opacity = TmAlertPainter.AlertOpacity;      
     }
   }
