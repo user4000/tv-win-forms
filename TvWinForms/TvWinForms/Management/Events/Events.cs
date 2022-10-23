@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading.Tasks;
 using Telerik.WinControls.UI;
-using static TvWinForms.FrameworkManager;
 
 namespace TvWinForms
 {
@@ -80,7 +79,6 @@ namespace TvWinForms
     public Func<Task> StartAsync { get; set; }
 
 
-
     /// <summary>
     /// Order of execution 7
     /// </summary>
@@ -108,10 +106,6 @@ namespace TvWinForms
 
 
     #endregion
-
-
-
-
 
 
     public Action<object, FormClosedEventArgs> MainFormClosed { get; set; }

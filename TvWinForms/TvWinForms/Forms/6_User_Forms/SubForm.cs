@@ -25,9 +25,9 @@ namespace TvWinForms
 
     public Group FormGroup { get; private set; }
 
-    public bool FlagNodeEnabled { get; } = true; // Активна или отключена верхушка вкладки //
+    public bool FlagNodeEnabled { get; } = true; 
 
-    public bool FlagNodeVisible { get; } = true; // Видима или скрыта верхушка вкладки //
+    public bool FlagNodeVisible { get; } = true; 
 
 
     private SubForm(ushort idForm, Group group, RadForm form, string uniqueName, string pageText, bool enabled, bool visible)
