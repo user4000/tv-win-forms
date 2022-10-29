@@ -12,7 +12,7 @@ namespace TvWinForms
     {
       if (MainForm.WindowState != FormWindowState.Normal) return;
 
-      this.MainFormSize = MainForm.Size;
+      if ((MainForm.Size.Width > 0) && (MainForm.Size.Height > 0)) this.MainFormSize = MainForm.Size;
       this.MainFormLocation = MainForm.Location;
     }
 
@@ -41,6 +41,7 @@ namespace TvWinForms
       GetMainFormLocation();
 
       CheckErrorFileNamedAsDirectory();
+
       try
       {
         base.Save(fileName);
