@@ -7,24 +7,23 @@ namespace TvWinForms
   {
     public bool SetText(ushort id, string text)
     {
-      var page = FindPage(id); if (page == null) return false;
-      return SetText(page, text);
+      return SetText(FindPage(id), text);
     }
 
-    public bool SetText(string uniquePageName, string text)
+    public bool SetText(string uniqueName, string text)
     {
-      var page = FindPage(uniquePageName); if (page == null) return false;
-      return SetText(page, text);
+      return SetText(FindPage(uniqueName), text);
     }
 
     public bool SetText<T>(string text)
     {
-      var page = FindPage<T>(); if (page == null) return false;
-      return SetText(page, text);
+      return SetText(FindPage<T>(), text);
     }
 
     bool SetText(RadPageViewPage page, string text)
     {
+      if (page == null) return false;
+
       bool result = false;
 
       if ((page != null) && (page.Tag != null) && (page.Tag is SubForm))

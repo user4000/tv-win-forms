@@ -22,13 +22,13 @@ namespace TvWinForms
       return result;
     }
 
-    public T GetForm<T>(string uniquePageName) where T : RadForm
+    public T GetForm<T>(string uniqueName) where T : RadForm
     {
       T result = null;
 
       foreach (var pair in Service.DicForms)
       {
-        if ((pair.Key == uniquePageName) && (pair.Value.Form is T))
+        if ((pair.Key == uniqueName) && (pair.Value.Form is T))
         {
           try { result = (T)(pair.Value.Form); } catch { };
           break;

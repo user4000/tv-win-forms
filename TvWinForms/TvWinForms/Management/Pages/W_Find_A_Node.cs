@@ -8,24 +8,23 @@ namespace TvWinForms
   {
     public RadTreeNode GetNode(ushort id)
     {
-      var page = FindPage(id); if (page == null) return null;
-      return GetNode(page);
+      return GetNode(FindPage(id));
     }
 
-    public RadTreeNode GetNode(string uniquePageName, Image image)
+    public RadTreeNode GetNode(string uniqueName, Image image)
     {
-      var page = FindPage(uniquePageName); if (page == null) return null;
-      return GetNode(page);
+      return GetNode(FindPage(uniqueName));
     }
 
     public RadTreeNode GetNode<T>(Image image)
     {
-      var page = FindPage<T>(); if (page == null) return null;
-      return GetNode(page);
+      return GetNode(FindPage<T>());
     }
 
     RadTreeNode GetNode(RadPageViewPage page)
     {
+      if (page == null) return null;
+
       RadTreeNode result = null;
 
       if ((page != null) && (page.Tag != null) && (page.Tag is SubForm))

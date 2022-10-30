@@ -6,25 +6,24 @@ namespace TvWinForms
   partial class PagesManager
   {
     public bool GotoPage(ushort id)
-    {
-      var page = FindPage(id); if (page == null) return false;
-      return GotoPage(page);
+    { 
+      return GotoPage(FindPage(id));
     }
 
-    public bool GotoPage(string uniquePageName)
+    public bool GotoPage(string uniqueName)
     {
-      var page = FindPage(uniquePageName); if (page == null) return false;
-      return GotoPage(page);
+      return GotoPage(FindPage(uniqueName));
     }
 
     public bool GotoPage<T>()
     {
-      var page = FindPage<T>(); if (page == null) return false;
-      return GotoPage(page);
+      return GotoPage(FindPage<T>());
     }
 
     bool GotoPage(RadPageViewPage page)
     {
+      if (page == null) return false;
+
       bool result = false;
 
       if ((page != null) && (page.Tag != null) && (page.Tag is SubForm))

@@ -22,13 +22,13 @@ namespace TvWinForms
       return result;
     }
 
-    public RadPageViewPage FindPage(string uniquePageName)
+    public RadPageViewPage FindPage(string uniqueName)
     {
       RadPageViewPage result = null;
 
       foreach (var pair in Service.DicForms)
       {
-        if (pair.Key == uniquePageName)
+        if (pair.Key == uniqueName)
         {
           result = pair.Value.Page;
           break;

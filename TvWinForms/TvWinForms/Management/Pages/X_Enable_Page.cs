@@ -7,24 +7,23 @@ namespace TvWinForms
   {
     public bool EnablePage(ushort id, bool enable)
     {
-      var page = FindPage(id); if (page == null) return false;
-      return Enable(page, enable);
+      return Enable(FindPage(id), enable);
     }
 
-    public bool EnablePage(string uniquePageName, bool enable)
+    public bool EnablePage(string uniqueName, bool enable)
     {
-      var page = FindPage(uniquePageName); if (page == null) return false;
-      return Enable(page, enable);
+      return Enable(FindPage(uniqueName), enable);
     }
 
     public bool EnablePage<T>(bool enable)
     {
-      var page = FindPage<T>(); if (page == null) return false;
-      return Enable(page, enable);
+      return Enable(FindPage<T>(), enable);
     }
 
     bool Enable(RadPageViewPage page, bool enable)
     {
+      if (page == null) return false;
+
       bool result = false;
 
       if ((page != null) && (page.Tag != null) && (page.Tag is SubForm))
