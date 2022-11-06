@@ -59,7 +59,7 @@ namespace TvWinFormsExample
 
     private void EventTest1(object sender, EventArgs e)
     {
-      Ms.Message("test", "test").Single(BxTest3).Sound(SystemSounds.Question).Info(3);
+      Ms.Message("test", "test").Single(BxTest3).ToFile().Sound(SystemSounds.Exclamation).Info(3);
     }
 
     public void EventEndWork()

@@ -27,6 +27,8 @@ namespace TvWinForms
 
       AddFormsFromQueueToPageView(); // Добавляем формы из очереди на Page View //
 
+      FormLog.Configure();
+
       FrameworkManager.Events.BeforeSubFormsAreCreated?.Invoke();
 
       ExecStartWorkHandlerForEachSubForm(); // Выполнить событие IStartForm для каждой формы, которая поддерживает этот интерфейс //
